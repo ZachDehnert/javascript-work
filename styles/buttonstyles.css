@@ -1,0 +1,10 @@
+button, input[type=button] {
+    font-size: 14pt;
+    font-weight: bold;
+    min-width: 140px;
+    background-color: #EFEA5A;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid #222;
+    box-shadow: 2px 2px 2px #444
+}

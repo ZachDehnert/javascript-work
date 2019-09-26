@@ -1,0 +1,44 @@
+/* selector {
+    property1: value;
+    property2: value, value, value;
+}
+*/
+
+* {
+    margin: 0; padding: 0; border: 0; box-sizing: border-box;
+}
+
+body {
+    background-color: #048BA8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 10px solid #16DB93;
+    padding: 1em;
+}
+
+h1 {
+    text-align: right;
+}
+
+h2 {
+    font-weight: normal;
+    border-bottom: 1px solid #222;
+}
+
+a {
+    color: #EFEA5A;
+    font-size: 110%;
+    text-decoration: none;
+}
+
+ul {
+    margin-left: 1em;
+    margin: 2em;
+}
+
+input[type=text], input[type=password] {
+    font-size: 1.3em;
+    border: 1px solid #222;
+    box-shadow: 2px 2px 2px #222;
+    min-width: 140px;
+    min-height: 40px;
+}

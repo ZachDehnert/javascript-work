@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Buttons for Javascript</title>
+
+  <!-- external styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- internal styles -->
+
+  <style>
+
+
+
+  </style>
+
+  <!-- external scripts-->
+
+  <!-- internal scripts -->
+
+  <script>
+
+    function backgroundChanger(bgc,txtc) {
+        document.body.style.backgroundColor = bgc;
+        document.body.style.color = txtc;
+
+    }
+
+  </script>
+
+  </head>
+
+  <body>
+
+    <h1>Buttons for Javascript</h1>
+
+    <button id="btn1" onclick="backgroundChanger('red','#FFC')">red</button>
+
+    <button id="btn2" onclick="backgroundChanger('green','blue')">green</button>
+
+    <input type="button" id="btn3" value="orange" onclick="backgroundChanger('orange','black')">
+
+    <input type="button" id="btn4" value="black" onclick="backgroundChanger('#222','#EEE')">
+
+  </body>
+
+</html>
