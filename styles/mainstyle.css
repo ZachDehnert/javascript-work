@@ -9,30 +9,64 @@
 }
 
 body {
-    background-color: #048BA8;
+    background-color: #D3D3D3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: 10px solid #16DB93;
-    padding: 1em;
+    /* border: 10px solid #16DB93; */
+    /* padding: 1em; */
 }
 
 h1 {
-    text-align: right;
+
 }
 
 h2 {
-    font-weight: normal;
-    border-bottom: 1px solid #222;
+
 }
 
 a {
-    color: #EFEA5A;
+    color: #0000A0;
     font-size: 110%;
-    text-decoration: none;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #800080;
+    font-size: 110%;
+    text-decoration: underline;
 }
 
 ul {
     margin-left: 1em;
     margin: 2em;
+}
+
+ul li {
+    padding-bottom:2%;
+    list-style-type: none;
+}
+
+.weekly-header {
+    margin:2% 0 0 2%;
+}
+
+.body-para {
+    margin:2%;
+}
+
+#body-container {
+    margin:2%;
+}
+
+.sec-containers {
+    border:1px solid #222;
+    margin:2%;
+    padding:2%;
+}
+
+#user-pass {
+    border:1px solid #222;
+    margin:2% 2% 2% 2%;
+    padding:2%;
 }
 
 input[type=text], input[type=password] {
@@ -41,4 +75,45 @@ input[type=text], input[type=password] {
     box-shadow: 2px 2px 2px #222;
     min-width: 140px;
     min-height: 40px;
+}
+
+#profile-pic {
+    width:10%;
+    height:auto;
+    margin:0 0 2% 2%;
+    border:1px solid #fff;
+}
+
+#header {
+    width:100%;
+    height:auto;
+    background-color:#222;
+    margin:0;
+    padding:0;
+}
+
+#page-header {
+    text-align: right;
+    padding:2% 2% 0 0;
+    color:#fff;
+}
+
+#index-body-header {
+    background-color: #696969;
+}
+
+#index-body-header h2 {
+    color:#fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    padding:2% 0 2% 2%;
+}
+
+.numDisplay {
+    font-size: 24pt;
+    border:1px solid #222;
+    height:50px;
+    text-align: center;
+    width:6%;
+    margin-left:4%;
 }

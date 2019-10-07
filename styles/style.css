@@ -1,0 +1,37 @@
+#victory-dance {
+    margin:0px auto;
+    display:none;
+    width:100%;
+    /* background-color: red; */
+}
+
+#victory-dance-gif {
+    display:block;
+    margin:0px auto;
+}
+
+#defeat {
+    margin:0px auto;
+    display:none;
+    width:100%;
+    /* background-color: red; */
+}
+
+#defeat-gif {
+    display:block;
+    margin:0px auto;
+}
+
+#btn-style {
+    width:50%;
+    height:100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20pt;
+    display: block;
+    margin: 1% auto;
+}
+
+#pg-heading {
+    margin:2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

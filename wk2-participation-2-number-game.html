@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <!-- external styles -->
+    <link href="styles/style.css" media="screen" rel="stylesheet" type="text/css" />  
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      body {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+
+    </style>
+
+    <script>
+    
+    
+    
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="header">
+      <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+      <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+
+    <div id="index-body-header">
+      <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <h3 id="pg-heading">Number guessing game</h1>
+
+    <p class="body-para">We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+    <div id="body-container">
+
+      <div class="form">
+        <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit">
+      </div>
+
+      <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+
+      <div id="victory-dance">
+          <img id="victory-dance-gif" src="images/victory-dance.gif">
+      </div>
+
+      <div id="defeat">
+        <img id="defeat-gif" src="images/defeat.gif">
+      </div>
+
+    </div>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) +1;
+
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        let guessCount = 1;
+        let resetButton;
+
+        var h1Elements = document.getElementsByTagName("pg-heading");
+
+        guessField.focus();
+
+        function checkGuess() {
+            let userGuess = Number(guessField.value);
+            if (guessCount === 1) {
+                guesses.textContent = 'Previous guesses: ';
+            }
+            guesses.textContent += userGuess + ' ';
+            
+            if (userGuess === randomNumber) {
+                lastResult.textContent = 'Congratulations! You got it right!';
+                lastResult.style.backgroundColor = 'green';
+                document.body.style.backgroundColor = '#006400';
+                
+                for(var i = 0; i < h1Elements.length; i++) {
+                    h1Elements[i].style.color = "#fff";
+                }
+
+                document.getElementById("pg-heading").style.color = "#fff";
+
+                document.getElementById("victory-dance").style.display = "block";
+
+                lowOrHi.textContent = '';
+                setGameOver();
+            } else if (guessCount === 10) {
+                lastResult.textContent = '!!!GAME OVER!!!';
+                lowOrHi.textContent = '';
+                document.body.style.backgroundColor = '#B22222';
+
+                document.getElementById("pg-heading").style.color = "#fff";
+
+                document.getElementById("defeat").style.display = "block";
+
+                setGameOver();
+            } else {
+                lastResult.textContent = 'Wrong!';
+                lastResult.style.backgroundColor = 'red';
+                if (userGuess < randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too low!';
+                } else if (userGuess > randomNumber){
+                    lowOrHi.textContent = 'Last guess was to high!';
+                }
+            }
+
+            guessCount++;
+            guessField.value = '';
+            guessField.focus();
+
+        }
+
+        guessSubmit.addEventListener('click', checkGuess);
+
+        function setGameOver() {
+            guessField.disabled = true;
+            guessSubmit.disabled = true;
+            resetButton = document.createElement('button');
+            resetButton.textContent = 'Start new game';
+            document.body.appendChild(resetButton);
+            document.getElementsByTagName("button")[0].setAttribute("id","btn-style");
+            resetButton.addEventListener('click', resetGame);
+        }
+
+        function resetGame() {
+            guessCount = 1;
+
+            const resetParas = document.querySelectorAll('.resultParas p');
+            for (let i = 0; i < resetParas.length; i++) {
+                resetParas[i].textContent = '';
+            }
+
+            resetButton.parentNode.removeChild(resetButton);
+            document.body.style.backgroundColor = '#fff';
+
+            guessField.disabled = false;
+            guessSubmit.disabled = false;
+            guessField.value = '';
+            guessField.focus();
+
+            lastResult.style.backgroundColor = 'white';
+
+            document.getElementById("pg-heading").style.color = "#222";
+
+            document.getElementById("victory-dance").style.display = "none";
+
+            document.getElementById("defeat").style.display = "none";
+
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+        }
+    </script>
+
+  </body>
+</html>
