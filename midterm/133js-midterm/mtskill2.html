@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Mid-term Exam | CIS 133JS Introduction to JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="examstyle.css">
+</head>
+<body id="s2">
+<div class="container">
+	<header>
+		<h1>Mid-term Exam for <span>CIS 133JS Introduction to JavaScript</span></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" id="linkhome">home</a></li>
+			<li><a href="mtskill1.html" id="links1">skill 1</a></li>
+			<li><a href="mtskill2.html" id="links2">skill 2</a></li>
+			<li><a href="mtskill3.html" id="links3">skill 3</a></li>
+			<li><a href="mtskill4.html" id="links4">skill 4</a></li>
+			<li><a href="mtskill5.html" id="links5">skill 5</a></li>
+			<li><a href="mtskill6.html" id="links6">skill 6</a></li>
+			<li><a href="mtskill7.html" id="links7">skill 7</a></li>
+			<li><a href="mtskill8.html" id="links8">skill 8</a></li>
+			
+		</ul>
+	</nav>
+	<main>
+		<h2>skill 2</h2>
+			<aside class="directions">
+				<ul>
+					<li>Create a script that changes the background color of the body of this web page to various shades of purple as the user changes the range slider.</li>
+				</ul>
+				<p class="notes">
+				The slider is already created with a step of 6. Background colors can be set with CSS using the red RGB syntax of rgb(r,g,b). If g is set to 0, changing r and b will change shades of purple as long as r and b are equal values. r and b can each be 0 - 255.</p>
+				<p class="points">
+					This skill is worth <strong>8 points</strong></p>
+			</aside>
+
+			<section>
+				<input id="range" type="range" step="6" min="0" max="255" value="12">
+
+			</section>
+
+
+	</main>
+
+
+
+</div>
+
+<script>
+
+//r - sliderValue g - sliderValue b - sliderValue
+
+function changeBgColor() {
+	let bodyBG = document.getElementById("s2");
+	rangeInput = rangeOb.value;
+	console.log(rangeInput);
+	bodyBG.style.backgroundColor = "rgb(" + rangeInput + ",0," + rangeInput + ")";
+}
+
+rangeOb = document.querySelector('input[type=range]');
+console.log(rangeOb);
+
+
+
+rangeOb.addEventListener('input', changeBgColor);
+
+
+
+</script>
+
+</body>
+</html>

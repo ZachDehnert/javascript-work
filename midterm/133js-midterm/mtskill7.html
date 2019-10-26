@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Mid-term Exam | CIS 133JS Introduction to JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="examstyle.css">
+</head>
+<body id="s7">
+<div class="container">
+	<header>
+		<h1>Mid-term Exam for <span>CIS 133JS Introduction to JavaScript</span></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" id="linkhome">home</a></li>
+			<li><a href="mtskill1.html" id="links1">skill 1</a></li>
+			<li><a href="mtskill2.html" id="links2">skill 2</a></li>
+			<li><a href="mtskill3.html" id="links3">skill 3</a></li>
+			<li><a href="mtskill4.html" id="links4">skill 4</a></li>
+			<li><a href="mtskill5.html" id="links5">skill 5</a></li>
+			<li><a href="mtskill6.html" id="links6">skill 6</a></li>
+			<li><a href="mtskill7.html" id="links7">skill 7</a></li>
+			<li><a href="mtskill8.html" id="links8">skill 8</a></li>
+			
+		</ul>
+	</nav>
+	<main>
+		<h2>skill 7</h2>
+			<aside class="directions">
+				<ul>
+					<li>Create a number guessing game with difficulty levels.</li>
+					<li>The user can choose a level of difficulty. Based on the choice, the div boxes beneath the slider will light up as green, yellow, orange, or red (background color). Only the difficulty level color shows, while others are no background or light gray.</li>
+					<li>Based on the difficulty, a random number is generated from 1-10, 1-50, 1-100, or 1-1000 when the user clicks the 'start game' button. Note: <strong>the random number should display in the console.log() so that someone can cheat if they have the console displayed.</strong></li>
+					<li>The game will keep track of the guesses, and display the guess count in the output area.</li>
+					<li>The game will let the user know if their guess is too high, or too low.</li>
+					<li>If the user cannot guess the number in ten (10) guesses, the game will...
+						<ul>
+							<li>reset the guess count to zero</li>
+							<li>Thank the user for playing</li>
+							<li>Automatically decrease the difficulty level by one level</li>
+							<li>Suggest the user play again</li>
+
+						</ul></li>
+					<li>If the user guesses the number correctly within ten (10) guesses, the user is congratulated (text in the output area).</li>
+
+				</ul>
+				<p class="points">
+					This skill is worth <strong>16 points</strong></p>
+			</aside>
+
+			<section>
+
+				<label>Difficulty</label><br>
+				<input type="range" step="1" min="1" max="4" value="2">
+				<div id="diflevel">
+					<div id="dif1">easy</div>
+					<div id="dif2">intermediate</div>
+					<div id="dif3">difficult</div>
+					<div id="dif4">insane</div>
+				</div>
+
+				<input id="startBtn" type="button" value="start game">
+
+				<br><br>
+				<label>Your guess:</label>
+				<input type="text" id="guessvalue">
+
+				<input id="checkBtn" type="button" value="checkguess">
+				
+
+				<p class="output" id="output-display"></p>
+
+				
+
+			</section>
+
+
+	</main>
+
+<script>
+
+console.log("Internal JS is connected");
+
+var setDiff = 1;
+var ranNum = 0;
+
+rangeObj = document.querySelector('input[type=range]');
+//console.log(rangeObj);
+
+function diffSelFunc() {
+	//console.log('Difficulty Function is connected');
+	sliValueObj = document.querySelector('input[type="range"]');
+	//console.log(sliValueObj);
+	//console.log(rangeObj);
+	let diffVal = rangeObj.value;
+	//console.log(diffVal);
+	diffHighlighter(diffVal);
+}
+
+	function diffHighlighter(num) {
+		if (num == 1) {
+			//console.log(num);
+			console.log("Easy");
+			for (i = 1; i < 5; i++) {
+				diffRecObj = document.getElementById('dif' + i);
+				diffRecObj.style.backgroundColor = "transparent";
+			}
+			document.getElementById('dif1').style.backgroundColor = 'green';
+			document.getElementById('dif2').style.color = '#FF9';
+			setDiff = num;
+			console.log("Global setDiff: " + setDiff);
+		} else if (num == 2) {
+			//console.log(num);
+			console.log("Intermediate");
+			for (i = 1; i < 5; i++) {
+				diffRecObj = document.getElementById('dif' + i);
+				diffRecObj.style.backgroundColor = "transparent";
+			}
+			document.getElementById('dif2').style.backgroundColor = 'yellow';
+			document.getElementById('dif2').style.color = '#222';
+			setDiff = num;
+			console.log("Global setDiff: " + setDiff);
+		} else if (num == 3) {
+			//console.log(num);
+			console.log("Difficult");
+			for (i = 1; i < 5; i++) {
+				diffRecObj = document.getElementById('dif' + i);
+				diffRecObj.style.backgroundColor = "transparent";
+			}
+			document.getElementById('dif3').style.backgroundColor = 'orange';
+			document.getElementById('dif2').style.color = '#FF9';
+			setDiff = num;
+			console.log("Global setDiff: " + setDiff);
+		} else {
+			//console.log(num);
+			console.log("Insane");
+			for (i = 1; i < 5; i++) {
+				diffRecObj = document.getElementById('dif' + i);
+				diffRecObj.style.backgroundColor = "transparent";
+			}
+			document.getElementById('dif4').style.backgroundColor = 'red';
+			document.getElementById('dif2').style.color = '#FF9';
+			setDiff = num;
+			console.log("Global setDiff: " + setDiff);
+		}
+	}
+
+rangeObj.addEventListener('input', diffSelFunc);
+
+function startGame() {
+	console.log("Starting Game at " + setDiff + " difficulty.");
+	if (setDiff == 1) {
+		var ranNum = Math.floor(Math.random()*10) + 1;
+		console.log("Random number is: " + ranNum);
+	} else if (setDiff == 2) {
+		var ranNum = Math.floor(Math.random()*50) + 1;
+		console.log("Random number is: " + ranNum);
+	} else if (setDiff == 3) {
+		var ranNum = Math.floor(Math.random()*100) + 1;
+		console.log("Random number is: " + ranNum);
+	} else {
+		var ranNum = Math.floor(Math.random()*1000) + 1;
+		console.log("Random number is: " + ranNum);
+	}
+}
+
+startBtnObj = document.getElementById("startBtn");
+//console.log(startBtnObj);
+startBtnObj.addEventListener('click', startGame);
+
+function checkNum() {
+	console.log("Check Number Function Operational");
+	console.log("Global Random Number: " + ranNum);
+	userGuessObj = document.getElementById("guessvalue");
+	//console.log(userGuessObj);
+	userGuess = userGuessObj.value;
+	//console.log(userGuess);
+	pObj = document.querySelector('.output');
+	//console.log(pObj);
+	pObj.textContent += userGuess + ' ';
+}
+
+checkBtnObj = document.getElementById("checkBtn");
+//console.log(checkBtnObj);
+checkBtnObj.addEventListener('click', checkNum);
+
+</script>
+
+
+</div>
+</body>
+</html>

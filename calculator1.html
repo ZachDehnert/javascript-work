@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator1.html">Part #1 - Calc 1</a></li>
+        <li style="float:left;padding-right:4%;"><a href="calculator2.html">Part #2 - Calc 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="examskills1.html">Part #3 - Exam Skills</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 1 | Simple Calculator with Select Box</h3>
+
+    <section class="sec-containers">
+
+        <form>
+            Value 1: <input type="text" id="value1">
+            Value 2: <input type="text" id="value2">
+            Operator: <select id="operator">
+                <option value="add">Add</option>
+                <option value="min">Minus</option>
+                <option value="div">Divide</option>
+                <option value="mul">Multiply</option>
+            </select>
+            <button type="button" onclick="calc()">Calculate</button>
+        </form>
+
+        <div id="results"></div>
+
+    </section>
+
+    <script>
+
+        function calc() {
+            var a = parseInt(document.querySelector("#value1").value);
+            var b = parseInt(document.querySelector("#value2").value);
+            var op = document.querySelector("#operator").value;
+            var calculate;
+
+            if (op == "add") {
+                calculate = a + b;
+            } else if (op == "min") {
+                calculate = a - b;
+            }else if (op == "div") {
+                calculate = a / b;
+            }else if (op == "mul") {
+                calculate = a * b;
+            }
+
+            console.log(calculate);
+            document.querySelector("#results").innerHTML = calculate;
+        }
+
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page.html">Navigator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page-window.html">Window</a></li>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page-screen.html">Screen</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Window</h3>
+
+    <section class="sec-containers">
+
+        <h4>Screen with screen.availWidth</h4>
+        <p class="question">Just like with window we can see the available width of the page for the user. Click below to see how much of the screen is available</p>
+        <button id="scr-button">Check</button>
+        <p id="scr-result"></p>
+
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Screen with colorDepth</h4>
+        <p class="question">This property will check the color depth for you</p>
+        <button id="scr-button-2">Check</button>
+        <p id="scr-result-2"></p>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Screen with screen.pixelDepth</h4>
+        <p class="question">This will check the pixel depth for you</p>
+        <button id="scr-button-3">Check</button>
+        <p id="scr-result-3"></p>
+    
+    </section>
+
+
+
+    <script>
+        let scrbtn = document.getElementById('scr-button');
+        let scrbtn2 = document.getElementById('scr-button-2');
+        let scrbtn3 = document.getElementById('scr-button-3');
+
+        scrbtn.addEventListener('click', browserChecker);
+        scrbtn2.addEventListener('click', browserChecker2);
+        scrbtn3.addEventListener('click', browserChecker3);
+
+        function browserChecker() {
+            let navResult = document.getElementById('scr-result');
+            navResult.innerHTML = screen.availWidth;
+        }
+
+        function browserChecker2() {
+            let navResult = document.getElementById('scr-result-2');
+            navResult.innerHTML = screen.colorDepth;
+        }
+
+        function browserChecker3() {
+            let navResult = document.getElementById('scr-result-3');
+            navResult.innerHTML = screen.pixelDepth;
+        }
+
+    </script>
+
+  </body>
+
+</html>

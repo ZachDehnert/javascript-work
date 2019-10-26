@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Mid-term Exam | CIS 133JS Introduction to JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="examstyle.css">
+</head>
+<body id="s3">
+<div class="container">
+	<header>
+		<h1>Mid-term Exam for <span>CIS 133JS Introduction to JavaScript</span></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" id="linkhome">home</a></li>
+			<li><a href="mtskill1.html" id="links1">skill 1</a></li>
+			<li><a href="mtskill2.html" id="links2">skill 2</a></li>
+			<li><a href="mtskill3.html" id="links3">skill 3</a></li>
+			<li><a href="mtskill4.html" id="links4">skill 4</a></li>
+			<li><a href="mtskill5.html" id="links5">skill 5</a></li>
+			<li><a href="mtskill6.html" id="links6">skill 6</a></li>
+			<li><a href="mtskill7.html" id="links7">skill 7</a></li>
+			<li><a href="mtskill8.html" id="links8">skill 8</a></li>
+			
+		</ul>
+	</nav>
+	<main>
+		<h2>skill 3</h2>
+			<aside class="directions">
+				<ul>
+					<li>Create a script that produces a <strong>random number between 20 and 50</strong> when the user clicks a button.</li>
+					<li>The random number is displayed in the premade display area with each click.</li>
+				</ul>
+				<p class="points">
+					This skill is worth <strong>10 points</strong></p>
+			</aside>
+
+			<section>
+				<button id="numberbutton">random number</button>
+
+
+				<p class="output" id="output-display"></p>
+
+			</section>
+
+
+	</main>
+
+
+
+</div>
+
+<script>
+
+	console.log('Internal JS is connected');
+
+	var pOutput = document.querySelector('.output');
+	console.log(pOutput);
+
+	var ranBtn = document.getElementById('numberbutton');
+	console.log(ranBtn);
+
+	function ranNumGen() {
+
+		ranNum = Math.floor(Math.random()*100);
+
+		for (i = 0; i < 2; i++) {
+			console.log("Hello World!");
+			ranNum = Math.floor(Math.random()*100);
+				if (ranNum < 20) {
+					i = 0;
+					console.log(i);
+				} else if (ranNum > 50) {
+					i = 0;
+					console.log(i);
+				} else {
+					pOutput.innerHTML = ranNum;
+					i = 2;
+				}
+		}
+
+	}
+
+	ranBtn.addEventListener('click', ranNumGen);
+
+</script>
+
+</body>
+</html>

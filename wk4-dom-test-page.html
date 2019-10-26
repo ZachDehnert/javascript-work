@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page.html">Navigator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page-window.html">Window</a></li>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page-screen.html">Screen</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Navigator</h3>
+
+    <section class="sec-containers">
+
+        <h4>Navigator with appCodeName</h4>
+        <p class="question">Fire up your favorite browser and check who is the maker. This is especially helpful if you don't know which browser you are using. There are a lot out there!</p>
+        <button id="nav-button">Check</button>
+        <p id="nav-result"></p>
+        <p id="nav-excl" style="clear:both;"></p>
+
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Navigator with cookieEnabled</h4>
+        <p class="question">Check to see if you have cookies enabled. This would be helpful in knowing if you are browsing privately.</p>
+        <button id="nav-button-2">Check</button>
+        <p id="nav-result-2"></p>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Navigator with appCodeName</h4>
+        <p class="question">Fire up your favorite browser and check who is the maker. This is especially helpful if you don't know which browser you are using. There are a lot out there!</p>
+        <button id="nav-button-3">Check</button>
+        <p id="nav-result-3"></p>
+    
+    </section>
+
+
+
+    <script>
+        let navbtn = document.getElementById('nav-button');
+        let navbtn2 = document.getElementById('nav-button-2');
+        let navbtn3 = document.getElementById('nav-button-3');
+
+        navbtn.addEventListener('click', browserChecker);
+        navbtn2.addEventListener('click', browserChecker2);
+        navbtn3.addEventListener('click', browserChecker3);
+
+        function browserChecker() {
+            let navResult = document.getElementById('nav-result');
+            let navExcl = document.getElementById('nav-excl');
+            let str = "here";
+            let strExcl = str.link("https://stackoverflow.com/questions/2780652/why-does-navigator-appcodename-return-mozilla");
+            navResult.innerHTML = navigator.appCodeName;
+            navExcl.innerHTML = "Oh no, it says Mozilla for every browser. Check out why " + strExcl;
+        }
+
+        function browserChecker2() {
+            let navResult = document.getElementById('nav-result-2');
+            navResult.innerHTML = navigator.cookieEnabled;
+        }
+
+        function browserChecker3() {
+            let navResult = document.getElementById('nav-result-3');
+            navResult.innerHTML = navigator.language;
+        }
+
+    </script>
+
+  </body>
+
+</html>

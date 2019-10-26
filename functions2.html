@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="functions1.html">Functions 1</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions2.html">Functions 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions3.html">Functions 3</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions3_2.html">Functions 3 - Loop Attempt</a></li>
+    </ul>
+
+    <h3 style="clear:both;">Make the dog WOOF</h3>
+
+    <section class="sec-containers">
+
+        <div id="dog-wrapper">
+
+          <div id="contain-div" onclick="bark('rover', 23)" >
+            <div id="woof-box">
+              <p class="woofs" id="rover"></p>
+            </div>
+            <img class="dog" src="images/dog1.jpg">
+
+          </div>
+
+          <div id="contain-div" onclick="bark('spot', 12)" >
+
+            <p id="spot"></p>
+            <img class="dog" src="images/dog2.jpg">
+
+          </div>
+
+          <div id="contain-div" onclick="bark('spike', 17)" >
+
+            <p id="spike"></p>
+            <img class="dog" src="images/dog3.jpg">
+
+          </div>
+
+          <div id="contain-div" onclick="bark('lady', 34)" >
+
+            <p id="lady"></p>
+            <img class="dog" src="images/dog4.jpg">
+
+          </div>
+
+        </div>
+
+        <div id="dog-wrapper">
+
+          <div id="contain-div" onclick="bark('hoover', 40)" >
+
+            <p id="hoover"></p>
+            <img class="dog" src="images/dog5.jpg">
+
+          </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <script>
+    
+        function bark(name, weight) {
+            if (weight >20) {
+              var bark = "WOOF WOOF";
+              document.getElementById(name).innerText = bark;
+            } else {
+              var bark = "woof woof";
+              document.getElementById(name).innerText = bark;
+            }
+
+        }
+
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Mid-term Exam | CIS 133JS Introduction to JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="examstyle.css">
+</head>
+<body id="s6">
+<div class="container">
+	<header>
+		<h1>Mid-term Exam for <span>CIS 133JS Introduction to JavaScript</span></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" id="linkhome">home</a></li>
+			<li><a href="mtskill1.html" id="links1">skill 1</a></li>
+			<li><a href="mtskill2.html" id="links2">skill 2</a></li>
+			<li><a href="mtskill3.html" id="links3">skill 3</a></li>
+			<li><a href="mtskill4.html" id="links4">skill 4</a></li>
+			<li><a href="mtskill5.html" id="links5">skill 5</a></li>
+			<li><a href="mtskill6.html" id="links6">skill 6</a></li>
+			<li><a href="mtskill7.html" id="links7">skill 7</a></li>
+			<li><a href="mtskill8.html" id="links8">skill 8</a></li>
+			
+		</ul>
+	</nav>
+	<main>
+		<h2>skill 6</h2>
+			<aside class="directions">
+				<ul>
+					<li>Create another script that demonstates the rule of 72 to the user.</li>
+					<li>As the user adjusts sliders, the initial investment and the rate of return will change. Note the steps and limits have already been applied to the sliders.</li>
+					<li>As the user adjusts sliders, a complete and dynamically changing sentence will display in the output area. The sentence will indicate the users selections AND the doubled amount AND when the doubling will occur. Example: <strong>If you invest $25000 at 7% return, you will have $50000 in 10.2 years.</strong></li>
+					<li>Additionally, as the user decreases/incrases either slider, the money bag image (top right corner of web page) will shrink and grow.</li>
+					<li>For the money bag, adjust the width (the height will change proportionately) using some value determined from a math formula that involves both the investment amound and the return amount. If the user increases either slider, the total benefit will increase, and the money bag should get bigger.</li>
+				</ul>
+				<p class="notes">
+				Use toString(1) to limit the years decimal to 1 place.</p>
+				<p class="points">
+					This skill is worth <strong>14 points</strong></p>
+			</aside>
+
+			<section>
+
+				<label>One-time Investement $</label><br>
+				<input id="invSli" type="range" step="5000" min="0" max="90000" value="20000">
+
+				<label>Rate of Return</label><br>
+				<input id="retSli" type="range" step="1" min="0" max="15" value="6">
+				
+
+				<p class="output" id="output-display"></p>
+
+				<img src="moneybag.svg" alt="bag of money" id="moneyimg">
+
+			</section>
+
+
+	</main>
+
+
+
+</div>
+
+<script>
+
+	//console.log("Internal JS is connected");
+
+	invSli = document.getElementById("invSli");
+	retSli = document.getElementById("retSli");
+
+	invSli.addEventListener('input', invSliValueFunc);
+	retSli.addEventListener('input', retSliValueFunc);
+
+	function invSliValueFunc() {
+		//console.log("invSliValueFunc is connected");
+		//console.log(invSli.value)
+		invSli = document.getElementById("invSli");
+		//console.log(invSli);
+
+		retSli = document.getElementById("retSli");
+		//console.log(retSli);
+
+		invSliValue = invSli.value;
+		//console.log(invSliValue);
+		retSliValue = retSli.value;
+		//console.log(retSliValue);
+
+
+		let inv = parseInt(invSliValue);
+		//console.log("Investment: " + inv);
+		let ret = parseInt(retSliValue);
+		//console.log("Rate of Return: " + ret);
+
+		var invMonBagWid = (inv / 1000) + 20;
+		//console.log(invMonBagWid);
+
+		monBagWid(invMonBagWid);
+
+		numCrunch(inv,ret);
+
+	}
+
+	function retSliValueFunc() {
+		//console.log("invSliValueFunc is connected");
+		//console.log(invSli.value)
+		invSli = document.getElementById("invSli");
+		//console.log(invSli);
+
+		retSli = document.getElementById("retSli");
+		//console.log(retSli);
+
+		invSliValue = invSli.value;
+		//console.log(invSliValue);
+		retSliValue = retSli.value;
+		//console.log(retSliValue);
+
+
+		let inv = parseInt(invSliValue);
+		//console.log("Investment: " + inv);
+		let ret = parseInt(retSliValue);
+		//console.log("Rate of Return: " + ret);
+
+		var retMonBagWid = (ret * 7) + 25;
+		console.log(retMonBagWid);
+
+		monBagWid(retMonBagWid);
+
+		numCrunch(inv,ret);
+
+	}
+
+	function monBagWid(width) {
+		console.log("Width Function Connected");
+		console.log("MonBag Width: " + width);
+		monBagObj = document.getElementById("moneyimg");
+		console.log(monBagObj);
+		monBagObj.style.width = width + "px";
+	}
+
+	function numCrunch(inv,ret) {
+		douInv = inv * 2;
+		ruleSevTwo = 72 / ret;
+		//console.log(douInv);
+		//console.log(ruleSevTwo);
+		outputArea(inv, ret, douInv, ruleSevTwo)
+	}
+
+	function outputArea(inv, ret, douInv, ruleSevTwo) {
+		//console.log(inv);
+		//console.log(ret);
+		//console.log(douInv);
+		//console.log(ruleSevTwo);
+
+		ruleSevTwoFixed = ruleSevTwo.toFixed(1);
+
+		pObj = document.querySelector(".output");
+		//console.log(pObj)
+		pObj.innerHTML = "If you invest $" + inv + " at " + ret + "% return, you will have $" + douInv + " in " + ruleSevTwoFixed + " years.";
+	}
+
+</script>
+
+</body>
+</html>

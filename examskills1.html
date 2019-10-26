@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator1.html">Part #1 - Calc 1</a></li>
+        <li style="float:left;padding-right:4%;"><a href="calculator2.html">Part #2 - Calc 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="examskills1.html">Part #3 - Exam Skills</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 3 | Exam Skills for Midterm</h3>
+
+    <section class="sec-containers">
+
+        <h4>Practice Skill 1</h4>
+
+        <p>If the user tries to enter a cc that is too short or too long, they get an error message.</p>
+
+        <label>Please enter your credit card 15 digit info</label>
+        <input id="ccNum" type="text">
+        <button type="button" onclick="ccCalc()">Order Now</button>
+
+
+
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Practice Skill 2</h4>
+
+        <p>If the user enters a password that is more than 9 characters, the background changes to green. Otherwise, it is yellow. The script checks when the user clicks the Register button.</p>
+
+        <label>Please enter a password that is more then 9 characters</label>
+        <input id="passNum" type="text">
+        <button type="button" onclick="passCalc()">Register</button>
+
+
+
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Practice Skill 3</h4>
+
+        <p>The user enters a quantity in the text box. The the user selects a style from the select menu. The total is diplayed in a paragraph on the page.</p>
+        <p>Product Widget = Price is $100.</p>
+
+        <label>Enter Quantity</label>
+        <input id="quanNum" type="text">
+        
+        <select id="styleSelect">
+            <option value="0">Select Style</option>
+            <option value="1">Modern - $100</option>
+            <option value="2">Post Modeern - $120</option>
+            <option value="3">Trendy - $230</option>
+
+        </select>
+
+        <button type="button" onclick="varGather()">Order</button>
+
+        <p id="orderTotal"></p>
+
+    </section>
+
+    <section class="sec-containers">
+
+            <h4>Practice Skill 4</h4>
+    
+            <p>User chooses one of the three cars available. Then they choose any combination of options from a set of checkboxes. Each option has it's own price, adn the total price needs to reflect this.</p>
+    
+            <p>Choose Car:</p>
+            <select id="carSelect">
+                <option value="0">Select Car</option>
+                <option value="1">4x4 - $40,000</option>
+                <option value="2">5x5 - $50,000</option>
+                <option value="3">7x7 - $70,000</option>
+    
+            </select>
+    
+            <button type="button" onclick="carSelection()">Select Car</button>
+    
+            <p id="orderTotal"></p>
+
+            <form style="display:none;" id="4x4">
+                <label>4x4 Options</label><br>
+                <input id="4x4-1" type="checkbox">Stereo with AM and FM - $50<br>
+                <input id="4x4-2" type="checkbox">Circular steering wheel - $100<br>
+                <input id="4x4-3" type="checkbox">passenger door - $200<br>
+                <input id="4x4-4" type="checkbox">Big wheels - $300<br>
+                <input id="4x4-5" type="checkbox">Fast engine - $400<br>
+                <button type="button" onclick="calcTotal()">Calculate Total</button>
+    
+            </form>
+
+            <form style="display:none;" id="5x5">
+                <label>5x5 Options</label><br>
+                <input id="5x5-1" type="checkbox">Stereo with AM and FM - $50<br>
+                <input id="5x5-2" type="checkbox">Circular steering wheel - $100<br>
+                <input id="5x5-3" type="checkbox">passenger door - $200<br>
+                <input id="5x5-4" type="checkbox">Big wheels - $300<br>
+                <input id="5x5-5" type="checkbox">Fast engine - $400<br>
+                <button type="button" onclick="calcTotal2()">Calculate Total</button>
+    
+            </form>
+
+            <form style="display:none;" id="7x7">
+                <label>7x7 Options</label><br>
+                <input id="7x7-1" type="checkbox">Stereo with AM and FM - $50<br>
+                <input id="7x7-2" type="checkbox">Circular steering wheel - $100<br>
+                <input id="7x7-3" type="checkbox">passenger door - $200<br>
+                <input id="7x7-4" type="checkbox">Big wheels - $300<br>
+                <input id="7x7-5" type="checkbox">Fast engine - $400<br>
+                <button type="button" onclick="calcTotal3()">Calculate Total</button>
+
+            </form>
+
+            <h4 id="finalCost"></h4>
+    
+        </section>
+
+    <script>
+
+        function ccCalc() {
+            let ccNum = document.querySelector('input[id=ccNum]').value;
+            console.log(ccNum);
+            if (ccNum.length == 15) {
+                alert("Your payment has been submited");
+            } else if (ccNum.length < 15) {
+                alert("Not enough digits, a credit card is 15 digits long");
+            } else {
+                alert("Too many digits, a credit card is 15 digits long");
+            }
+        }
+
+        function passCalc() {
+            let passNum = document.querySelector('input[id=passNum]').value;
+            console.log(passNum);
+            if (passNum.length > 9) {
+                document.getElementById("passNum").style.backgroundColor = "green";
+            } else {
+                document.getElementById("passNum").style.backgroundColor = "yellow";
+            }
+        }
+
+        let total;
+
+        function varGather() {
+            if(document.getElementById('styleSelect').value == "0") {
+                console.log("Please select a value");
+            } else if(document.getElementById('styleSelect').value == "1") {
+                let quan = document.getElementById("quanNum").value;
+                let total = 100 * quan;
+                console.log("Value is " + total);
+                document.getElementById("orderTotal").innerHTML = "Your order total is " + total;
+            } else if(document.getElementById('styleSelect').value == "2") {
+                let quan = document.getElementById("quanNum").value;
+                let total = 120 * quan;
+                console.log("Value is " + total);
+                document.getElementById("orderTotal").innerHTML = "Your order total is " + total;
+            } else if(document.getElementById('styleSelect').value == "3") {
+                let quan = document.getElementById("quanNum").value;
+                let total = 230 * quan;
+                console.log("Value is " + total);
+                document.getElementById("orderTotal").innerHTML = "Your order total is " + total;
+            }
+            
+        }
+
+        function carSelection() {
+            
+            if(document.getElementById('carSelect').value == "0") {
+                console.log("Please select a value");
+            } else if(document.getElementById('carSelect').value == "1") {
+                document.getElementById("4x4").style.display = "block";
+                document.getElementById("5x5").style.display = "none";
+                document.getElementById("7x7").style.display = "none";
+                console.log("4x4");
+            } else if(document.getElementById('carSelect').value == "2") {
+                document.getElementById("4x4").style.display = "none";
+                document.getElementById("5x5").style.display = "block";
+                document.getElementById("7x7").style.display = "none";
+                console.log("5x5");
+            } else if(document.getElementById('carSelect').value == "3") {
+                document.getElementById("4x4").style.display = "none";
+                document.getElementById("5x5").style.display = "none";
+                document.getElementById("7x7").style.display = "block";
+                console.log("7x7");
+            }
+        }
+
+        function calcTotal() {
+            var orderTotalCar = 0;
+
+            let fourByFour = document.getElementById("4x4");  
+
+            if(fourByFour.style.display == "block"){
+                console.log("4x4 Says Hello!");
+                orderTotalCar = 40000;
+                costs = ['','50','100','200','300','400'];
+                for (i = 1; i < costs.length; i++) {
+                    let input = document.getElementById("4x4-" + i);
+                    console.log(input);
+                    if (input.checked == true) {
+                        orderTotalCar += parseInt(costs[i]);
+                        console.log(orderTotalCar);
+                    }
+                }
+                document.getElementById("finalCost").innerHTML = "Your total cost is " + orderTotalCar;
+                uncheck();
+                
+            }
+
+        }
+
+        function calcTotal2() {
+
+            var orderTotalCar = 0;
+
+            let fiveByFive = document.getElementById("5x5"); 
+            
+            if(fiveByFive.style.display == "block"){
+                console.log("5x5 Says Hello!");
+                orderTotalCar = 50000;
+                costs = ['','50','100','200','300','400'];
+                for (i = 1; i < costs.length; i++) {
+                    let input = document.getElementById("5x5-" + i);
+                    console.log(input);
+                    if (input.checked == true) {
+                        orderTotalCar += parseInt(costs[i]);
+                        console.log(orderTotalCar);
+                    }
+                }
+                document.getElementById("finalCost").innerHTML = "Your total cost is " + orderTotalCar;
+                uncheck();
+                
+            }
+
+        }
+
+        function calcTotal3() {
+
+            var orderTotalCar = 0;
+
+            let sevenBySeven = document.getElementById("7x7");
+            
+            if(sevenBySeven.style.display == "block"){
+                console.log("7x7 Says Hello!");
+                orderTotalCar = 70000;
+                costs = ['','50','100','200','300','400'];
+                for (i = 1; i < costs.length; i++) {
+                    let input = document.getElementById("7x7-" + i);
+                    console.log(input);
+                    if (input.checked == true) {
+                        orderTotalCar += parseInt(costs[i]);
+                        console.log(orderTotalCar);
+                    }
+                }
+                document.getElementById("finalCost").innerHTML = "Your total cost is " + orderTotalCar;
+                uncheck();
+                
+            }
+            
+
+        }
+
+        function uncheck() {
+            var uncheck = document.getElementsByTagName('input');
+            for(var i=0;i<uncheck.length;i++) {
+                if(uncheck[i].type=='checkbox') {
+                    uncheck[i].checked=false;
+                }
+            }
+        }
+
+        //for (i = 0; i < 18; i++) {
+        //        if (question == 'q' + i) {
+         //           document.getElementById('buttons[' + i + ']').innerHTML = answers[i];
+         //       }
+         //   }
+
+    </script>
+
+  </body>
+
+</html>

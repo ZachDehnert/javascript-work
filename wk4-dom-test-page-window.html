@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page.html">Navigator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page-window.html">Window</a></li>
+        <li style="float:left;padding-right:4%;"><a href="wk4-dom-test-page-screen.html">Screen</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Window</h3>
+
+    <section class="sec-containers">
+
+        <h4>Window with innerWidth</h4>
+        <p class="question">Click the button below to check what the browser's inner width is</p>
+        <button id="win-button">Check</button>
+        <p id="win-result"></p>
+
+
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Window with window.name</h4>
+        <p class="question">This object property will return the name of the window you are on. With 'window.name' I named it and used the same to call it</p>
+        <button id="win-button-2">Check</button>
+        <p id="win-result-2"></p>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <h4>Window with window.top and window.self</h4>
+        <p class="question">This will check to see if your current window is on top or not. This is helpful if there are many windows open that are not expanded or some are set to "top".</p>
+        <button id="win-button-3">Check</button>
+        <p id="win-result-3"></p>
+    
+    </section>
+
+
+
+    <script>
+        let winbtn = document.getElementById('win-button');
+        let winbtn2 = document.getElementById('win-button-2');
+        let winbtn3 = document.getElementById('win-button-3');
+
+        winbtn.addEventListener('click', browserChecker);
+        winbtn2.addEventListener('click', browserChecker2);
+        winbtn3.addEventListener('click', browserChecker3);
+
+        function browserChecker() {
+            let navResult = document.getElementById('win-result');
+            navResult.innerHTML = window.innerWidth;
+        }
+
+        function browserChecker2() {
+            let navResult = document.getElementById('win-result-2');
+            window.name = "Javascript at COCC";
+            navResult.innerHTML = window.name;
+        }
+
+        function browserChecker3() {
+            let navResult = document.getElementById('win-result-3');
+
+            if (window.top != window.self) {
+                navResult.innerHTML = "This window is not the topmost window";
+            } else {
+                navResult.innerHTML = "This window is the topmost window";
+            }
+        }
+
+    </script>
+
+  </body>
+
+</html>

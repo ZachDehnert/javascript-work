@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="functions1.html">Functions 1</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions2.html">Functions 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions3.html">Functions 3</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions3_2.html">Functions 3 - Loop Attempt</a></li>
+    </ul>
+
+    <h3 style="clear:both;">Crossword Questions - Loop Attempt</h3>
+
+    <section class="sec-containers">
+
+        <!--
+        <button id="buttons[1]" class="q1" onclick="answerShow('q1')">Show answer</button>
+
+        <button id="buttons[2]" class="q2" onclick="answerShow('q1')">Show answer</button>
+
+        <button id="buttons[3]" class="q3" onclick="answerShow('q1')">Show answer</button>
+
+        <button id="buttons[4]" class="q4" onclick="answerShow('q1')">Show answer</button>
+        -->
+
+        <p class="question">Question 1: A variable with global ___________ is visible everywhere.</p>
+        <button id="buttons[1]" onclick="answerShow('q1')">Show answer</button>
+        
+        <p class="question">Question 2: Use the functions so you can __________________ code over and over again</p>
+        <button id="buttons[2]" onclick="answerShow('q2')">Show answer</button>
+
+        <p class="question">Question 3: The variables that arguments land in when they get passed to functions</p>
+        <button id="buttons[3]" onclick="answerShow('q3')">Show answer</button>
+
+        <p class="question">Question 4: A parameter acts like a _____________________ in the body of a function</p>
+        <button id="buttons[4]" onclick="answerShow('q4')">Show answer</button>
+ 
+        <p class="question">Question 5: To get a value back from a function, use the __________________ statement</p>
+        <button id="buttons[5]" onclick="answerShow('q5')">Show answer</button>
+
+        <p class="question">Question 6: JavaScript uses ______________________ when passing arguments to functions</p>
+        <button id="buttons[6]" onclick="answerShow('q6')">Show answer</button>
+   
+        <p class="question">Question 7: What gets passed to functions.</p>
+        <button id="buttons[7]" onclick="answerShow('q7')">Show answer</button>
+   
+        <p class="question">Question 8: When you reload your page, all your __________________ get re-initialized.</p>
+        <button id="buttons[8]" onclick="answerShow('q8')">Show answer</button>
+
+        <p class="question">Question 9: __________________ through your code means following the execution line by line</p>
+        <button id="buttons[9]" onclick="answerShow('q9')">Show answer</button>
+
+        <p class="question">Question 10: You can declare your functions __________________ in your JavaScript file.</p>
+        <button id="buttons[10]" onclick="answerShow('q10')">Show answer</button>
+
+        <p class="question">Question 11: What gets returned from a function without a return statement.</p>
+        <button id="buttons[11]" onclick="answerShow('q11')">Show answer</button>
+
+        <p class="question">Question 12: Watson looked at the bank heist code in Sherlock's _____________ on his phone.</p>
+        <button id="buttons[12]" onclick="answerShow('q12')">Show answer</button>
+ 
+        <p class="question">Question 13: Local variables disappear when the ________________ returns</p>
+        <button id="buttons[13]" onclick="answerShow('q13')">Show answer</button>
+
+        <p class="question">Question 14: It's better to use _______________ variables whenever you can.</p>
+        <button id="buttons[14]" onclick="answerShow('q14')">Show answer</button>
+   
+        <p class="question">Question 15: Extra arguments to a function are ___________________</p>
+        <button id="buttons[15]" onclick="answerShow('q15')">Show answer</button>
+   
+        <p class="question">Question 16: If you forget to declare your locals, they'll be treated like ________________</p>
+        <button id="buttons[16]" onclick="answerShow('q16')">Show answer</button>
+
+        <p class="question">Question 17: A local variable can ________________ a global variable.</p>
+        <button id="buttons[17]" onclick="answerShow('q17')">Show answer</button>
+    </section>
+
+
+
+    <script>
+    
+        //I wanted to loop through all the buttons, but couldn't get it working
+
+        function answerShow(question) {
+
+            var i;
+            var questionText;
+            var buttons;
+
+            var answers = ['','Scope','Reuse','Parameters','Variable','Return','Pass By Value','Arguments','Variables','Tracing','Anywhere','Undefined','Email','Function','Local','Ignored','Globals','Shadow'];
+
+            for (i = 0; i < 18; i++) {
+                if (question == 'q' + i) {
+                    document.getElementById('buttons[' + i + ']').innerHTML = answers[i];
+                }
+            }
+
+
+            //if (question == 'q10') {
+            //document.getElementById(question).innerHTML = "anywhere";
+            //return;
+            //}
+
+        }
+
+
+
+    </script>
+
+  </body>
+
+</html>

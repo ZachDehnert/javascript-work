@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Mid-term Exam | CIS 133JS Introduction to JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="examstyle.css">
+</head>
+<body id="s1">
+<div class="container">
+	<header>
+		<h1>Mid-term Exam for <span>CIS 133JS Introduction to JavaScript</span></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" id="linkhome">home</a></li>
+			<li><a href="mtskill1.html" id="links1">skill 1</a></li>
+			<li><a href="mtskill2.html" id="links2">skill 2</a></li>
+			<li><a href="mtskill3.html" id="links3">skill 3</a></li>
+			<li><a href="mtskill4.html" id="links4">skill 4</a></li>
+			<li><a href="mtskill5.html" id="links5">skill 5</a></li>
+			<li><a href="mtskill6.html" id="links6">skill 6</a></li>
+			<li><a href="mtskill7.html" id="links7">skill 7</a></li>
+			<li><a href="mtskill8.html" id="links8">skill 8</a></li>
+		
+		</ul>
+	</nav>
+	<main>
+		<h2>skill 1</h2>
+			<aside class="directions">
+				<ul>
+					<li>Create a script that changes the background color of the body of this web page to red or blue based on the button clicked by the user.</li>
+				</ul>
+				<p class="points">
+					This skill is worth <strong>8 points</strong></p>
+			</aside>
+
+			<section>
+				<button id="redbutton">red</button>
+
+				<button id="bluebutton">blue</button>
+
+			</section>
+
+
+	</main>
+
+
+
+</div>
+
+<script>
+
+	console.log("internal JS is connected");
+
+	function changeBodyRed() {
+		document.getElementById("s1").style.backgroundColor = "red";
+	}
+
+	function changeBodyBlue() {
+		document.getElementById("s1").style.backgroundColor = "blue";
+	}
+
+	let redbtn = document.getElementById("redbutton");
+	redbtn.addEventListener("click", changeBodyRed);
+
+	let bluebtn = document.getElementById("bluebutton");
+	bluebtn.addEventListener("click", changeBodyBlue);
+
+</script>
+
+</body>
+</html>

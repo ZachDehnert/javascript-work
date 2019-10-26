@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator1.html">Part #1 - Calc 1</a></li>
+        <li style="float:left;padding-right:4%;"><a href="calculator2.html">Part #2 - Calc 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="examskills1.html">Part #3 - Exam Skills</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 2 | The area of a rectangle and the area of a circle</h3>
+
+    <section class="sec-containers">
+
+        <form style="float:left;margin-right:4%;">
+            <div style="float:none;">
+                <label>Value 1 - Width</label>
+                <h4 id="num1">0</h4>
+                <input type="range" id="val1" min="0" max="255" oninput="changeValue1()">
+            </div>
+            <div style="float:none;">
+                <label>Value 2 - Height</label>
+                <h4 id="num2">0</h4>
+                <input type="range" id="val2" min="0" max="255" oninput="changeValue2()">
+            </div>
+            <div></div>
+        </form>
+
+        <div style="">
+            <p id="recTitle"></p>
+            <div style="float:left;" id="rectangle"></div>
+        </div>
+
+        <form style="float:left;margin-right:4%;">
+            <div style="float:none;">
+                <label>Value 3 - Diameter</label>
+                <h4 id="num3">0</h4>
+                <input type="range" id="val3" min="0" max="255" oninput="changeValue3()">
+            </div>
+            <div></div>
+        </form>
+
+        <div>
+            <p id="circleTitle"></p>
+            <div style="float:left;" id="circle"></div>
+        </div>
+
+        <div id="results"></div>
+
+    </section>
+
+    <script>
+        var gwidth;
+        var gheight;
+        var diameterCalc;
+
+
+        function changeValue1() {
+            let swarmVal1 = document.querySelector('input[id=val1]');
+            let crunchedVal1 = swarmVal1.value;
+
+            let numBoxVal1 = document.getElementById("num1");
+            numBoxVal1.innerHTML = crunchedVal1;
+
+            let wSwarm1 = document.getElementById('rectangle');
+            wSwarm1.style.width = crunchedVal1 + 'px';
+
+            gwidth = crunchedVal1;
+
+            recArea();
+
+        }
+
+        function changeValue2() {
+
+            let swarmVal2 = document.querySelector('input[id=val2]');
+            let crunchedVal2 = swarmVal2.value;
+
+            let numBoxVal2 = document.getElementById("num2");
+            numBoxVal2.innerHTML = crunchedVal2;
+
+            let wSwarm2 = document.getElementById('rectangle');
+            wSwarm2.style.height = crunchedVal2 + 'px';
+
+            gheight = crunchedVal2;
+
+            recArea();
+
+        }
+
+        function recArea() {
+            let area = gwidth * gheight;
+            let pTitle = document.getElementById("recTitle");
+            pTitle.innerHTML = "Area is " + area;
+
+        }
+
+        function changeValue3() {
+
+        let swarmVal3 = document.querySelector('input[id=val3]');
+        let crunchedVal3 = swarmVal3.value;
+
+        let numBoxVal3 = document.getElementById("num3");
+        numBoxVal3.innerHTML = crunchedVal3;
+
+        let wSwarm3 = document.getElementById('circle');
+        wSwarm3.style.height = crunchedVal3 + 'px';
+        wSwarm3.style.width = crunchedVal3 + 'px';
+
+        diameterCalc = crunchedVal3;
+
+        circArea();
+
+        }
+
+        function circArea() {
+            let circArea = 3.1416 * ((diameterCalc/2)*(diameterCalc/2));
+            let pTitle = document.getElementById("circleTitle");
+            pTitle.innerHTML = "Area is " + circArea;
+
+        }
+        
+
+        //var i = 0;
+        //setInterval(function(){
+        //    document.querySelector('input[type=range]').value = i++;
+        //}, 1000);
+
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Mid-term Exam | CIS 133JS Introduction to JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="examstyle.css">
+</head>
+<body id="s4">
+<div class="container">
+	<header>
+		<h1>Mid-term Exam for <span>CIS 133JS Introduction to JavaScript</span></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" id="linkhome">home</a></li>
+			<li><a href="mtskill1.html" id="links1">skill 1</a></li>
+			<li><a href="mtskill2.html" id="links2">skill 2</a></li>
+			<li><a href="mtskill3.html" id="links3">skill 3</a></li>
+			<li><a href="mtskill4.html" id="links4">skill 4</a></li>
+			<li><a href="mtskill5.html" id="links5">skill 5</a></li>
+			<li><a href="mtskill6.html" id="links6">skill 6</a></li>
+			<li><a href="mtskill7.html" id="links7">skill 7</a></li>
+			<li><a href="mtskill8.html" id="links8">skill 8</a></li>
+	
+		</ul>
+	</nav>
+	<main>
+		<h2>skill 4</h2>
+			<aside class="directions">
+				<ul>
+					<li>Create a script that keeps track of how many times the user clicks the button.</li>
+					<li>The count is displayed in the premade output area.</li>
+					<li>When the user clicks the button more than 9 times...
+						<ul>
+						<li>the output displays the text: <strong>"That's enough. It's time to get a new hobby!"</strong></li>
+						<li>the button is removed from the web page.</li>
+					</ul></li>
+				</ul>
+				<p class="points">
+					This skill is worth <strong>10 points</strong></p>
+			</aside>
+
+			<section>
+				<button id="button4">click me</button>
+
+
+				<p class="output" id="output-display"></p>
+
+			</section>
+
+
+	</main>
+
+
+
+</div>
+
+<script>
+
+	console.log("Internal JS is connected");
+
+	var count = 0;
+	
+
+	function countClicks() {
+		console.log("countClicks function is connected");
+		count += 1;
+		console.log(count);
+		pObj = document.querySelector(".output");
+		console.log(pObj);
+		pObj.innerHTML = count;
+		if (count > 9) {
+			pObj.innerHTML = "That's enough. It's time to get a new hobby!";
+			btnObj = document.getElementById("button4");
+			btnObj.style = "display: none"
+		}
+	}
+
+	btnObj = document.getElementById("button4");
+	btnObj.addEventListener("click", countClicks);
+
+
+
+</script>
+
+</body>
+</html>

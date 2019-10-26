@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 2 - Assignment Operators</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="functions1.html">Functions 1</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions2.html">Functions 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions3.html">Functions 3</a></li>
+        <li style="float:left;padding-right:4%;"><a href="functions3_2.html">Functions 3 - Loop Attempt</a></li>
+    </ul>
+
+    <h3 style="clear:both;">Assignment Operators Examples</h3>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 10;
+                let y = x;
+                console.log('y = ' + y);
+            </pre>
+
+            <button id="assignment-one">Assignment 01 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn1"></p>
+    
+        </section>
+
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Addition Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 25;
+                let y = 25;
+                let z = x += y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-two">Assignment 02 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn2"></p>
+    
+        </section>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Substraction Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 50;
+                let y = 25;
+                let z = x -= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-three">Assignment 03 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn3"></p>
+    
+        </section>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Multiplication Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 7;
+                let y = 2;
+                let z = x *= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-four">Assignment 04 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn4"></p>
+    
+        </section>
+
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Division Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 100;
+                let y = 4;
+                let z = x /= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-five">Assignment 05 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn5"></p>
+    
+        </section>
+
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Remainder Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 240;
+                let y = 160;
+                let z = x %= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-six">Assignment 06 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn6"></p>
+    
+        </section>
+
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Exponent Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 7;
+                let y = 2;
+                let z = x **= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-seven">Assignment 07 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn7"></p>
+    
+        </section>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Shift Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 5;
+                let y = 2;
+                let z = x <<= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-eight">Assignment 08 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturn" id="numReturn8"></p>
+    
+        </section>
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Bitwise AND Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 5;
+                let y = 2;
+                let z = x &= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-nine">Assignment 09 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturnBitwise" id="numReturn9"></p>
+    
+        </section>
+
+    
+    </section>
+
+    <section class="sec-containers">
+
+        <div class="leftContent">
+
+            <h4>Bitwise XOR Assignment Operator</h4>
+
+            <pre class="codeSnip">
+                let x = 5;
+                let y = 2;
+                let z = x ^= y
+                console.log('z = ' + z);
+            </pre>
+
+            <button id="assignment-ten">Assignment 10 =</button>
+
+        </div>
+
+        <section class="rightReturn">
+
+                <p class="numberReturnBitwise" id="numReturn10"></p>
+    
+        </section>
+    
+    </section>
+
+    <script>
+    
+        function assignmentOne() {
+
+            let result = document.getElementById('numReturn1')
+
+            let x = 10;
+            let y = x;
+            document.getElementById('numReturn1').innerHTML = y;
+            console.log('y = ' + y);
+        }
+
+        function assignmentTwo() {
+            let x = 25;
+            let y = 25;
+            let z = x += y
+            document.getElementById('numReturn2').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentThree() {
+            let x = 50;
+            let y = 25;
+            let z = x -= y
+            document.getElementById('numReturn3').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentFour() {
+            let x = 7;
+            let y = 2;
+            let z = x *= y
+            document.getElementById('numReturn4').innerHTML = z;
+            console.log('z = ' + z);
+        }
+        
+        function assignmentFive() {
+            let x = 100;
+            let y = 4;
+            let z = x /= y
+            document.getElementById('numReturn5').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentSix() {
+            let x = 240;
+            let y = 160;
+            let z = x %= y
+            document.getElementById('numReturn6').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentSeven() {
+            let x = 7;
+            let y = 2;
+            let z = x **= y
+            document.getElementById('numReturn7').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentEight() {
+            let x = 5;
+            let y = 2;
+            let z = x <<= y
+            document.getElementById('numReturn8').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentNine() {
+            let x = 5;
+            let y = 2;
+            let z = x &= y
+            document.getElementById('numReturn9').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        function assignmentTen() {
+            let x = 5;
+            let y = 2;
+            let z = x ^= y
+            document.getElementById('numReturn10').innerHTML = z;
+            console.log('z = ' + z);
+        }
+
+        document.getElementById('assignment-one').addEventListener('click', assignmentOne);
+        document.getElementById('assignment-two').addEventListener('click', assignmentTwo);
+        document.getElementById('assignment-three').addEventListener('click', assignmentThree);
+        document.getElementById('assignment-four').addEventListener('click', assignmentFour);
+        document.getElementById('assignment-five').addEventListener('click', assignmentFive);
+        document.getElementById('assignment-six').addEventListener('click', assignmentSix);
+        document.getElementById('assignment-seven').addEventListener('click', assignmentSeven);
+        document.getElementById('assignment-eight').addEventListener('click', assignmentEight);
+        document.getElementById('assignment-nine').addEventListener('click', assignmentNine);
+        document.getElementById('assignment-ten').addEventListener('click', assignmentTen);
+
+    </script>
+
+  </body>
+
+</html>
