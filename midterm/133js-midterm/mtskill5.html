@@ -79,33 +79,33 @@
 
 		//Gather the objects
 		invInputObj = document.getElementById('invValue');
-		console.log(invInputObj);
+		//console.log(invInputObj);
 		retInputObj = document.getElementById('retValue');
-		console.log(retInputObj);
+		//console.log(retInputObj);
 
 		//Store the object values
 		let invValue = invInputObj.value;
-		console.log(invValue);
+		//console.log(invValue);
 		let retValue = retInputObj.value;
-		console.log(retValue);
+		//console.log(retValue);
 
 		//Number Crunching
 		let douValue = invValue * 2;
-		console.log(douValue);
+		//console.log(douValue);
 
 		let divValue = 72 / retValue;
-		console.log(divValue);
+		//console.log(divValue);
 		let divValueFixed = divValue.toFixed(1);
-		console.log(divValueFixed);
+		//console.log(divValueFixed);
 
 		//Output
 		pObj = document.querySelector('.output');
-		console.log(pObj);
+		//console.log(pObj);
 		pObj.innerHTML = "You will have $" + douValue + " in about " + divValueFixed + " years"
 	}
 
 	btnObj = document.querySelector('input[type="button"]');
-	console.log(btnObj);
+	//console.log(btnObj);
 
 	btnObj.addEventListener("click", rateReturnFunc);
 

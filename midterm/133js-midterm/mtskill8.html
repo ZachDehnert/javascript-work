@@ -53,13 +53,11 @@
 
 			<section>
 
-				<input type="button" value="script modifications">
+				<input id="scriptBtn" type="button" value="script modifications">
 				
 				
 
-				<p class="output" id="output-display">
-					
-				</p>
+				<p style="overflow: scroll;" class="output" id="output-display"></p>
 
 				
 
@@ -71,5 +69,23 @@
 
 
 </div>
+
+<script>
+
+console.log("Internal JS connected");
+
+function scriptMod() {
+	console.log("Hello World!");
+	pObj = document.querySelector(".output");
+	var fireChange = "For this change, I added the gif and hid it at start and when they won, it changed the gif to 'block'.";
+	pObj.textContent = "Script Change Fireworks!" + fireChange + "";
+	
+}
+
+scriptBtnObj = document.getElementById("scriptBtn");
+scriptBtn.addEventListener('click', scriptMod);
+
+</script>
+
 </body>
 </html>

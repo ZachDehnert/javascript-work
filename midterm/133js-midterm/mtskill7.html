@@ -70,8 +70,9 @@
 
 				<input id="checkBtn" type="button" value="checkguess">
 				
-
+				<p class="outputText"></p>
 				<p class="output" id="output-display"></p>
+				<img class="outputGif" src="fireworks.gif">
 
 				
 
@@ -85,7 +86,11 @@
 console.log("Internal JS is connected");
 
 var setDiff = 1;
-var ranNum = 0;
+var ranNum;
+var count = 0;
+
+pGifObj = document.querySelector(".outputGif");
+pGifObj.style.display = "none";
 
 rangeObj = document.querySelector('input[type=range]');
 //console.log(rangeObj);
@@ -103,7 +108,7 @@ function diffSelFunc() {
 	function diffHighlighter(num) {
 		if (num == 1) {
 			//console.log(num);
-			console.log("Easy");
+			//console.log("Easy");
 			for (i = 1; i < 5; i++) {
 				diffRecObj = document.getElementById('dif' + i);
 				diffRecObj.style.backgroundColor = "transparent";
@@ -114,7 +119,7 @@ function diffSelFunc() {
 			console.log("Global setDiff: " + setDiff);
 		} else if (num == 2) {
 			//console.log(num);
-			console.log("Intermediate");
+			//console.log("Intermediate");
 			for (i = 1; i < 5; i++) {
 				diffRecObj = document.getElementById('dif' + i);
 				diffRecObj.style.backgroundColor = "transparent";
@@ -125,7 +130,7 @@ function diffSelFunc() {
 			console.log("Global setDiff: " + setDiff);
 		} else if (num == 3) {
 			//console.log(num);
-			console.log("Difficult");
+			//console.log("Difficult");
 			for (i = 1; i < 5; i++) {
 				diffRecObj = document.getElementById('dif' + i);
 				diffRecObj.style.backgroundColor = "transparent";
@@ -136,7 +141,7 @@ function diffSelFunc() {
 			console.log("Global setDiff: " + setDiff);
 		} else {
 			//console.log(num);
-			console.log("Insane");
+			//console.log("Insane");
 			for (i = 1; i < 5; i++) {
 				diffRecObj = document.getElementById('dif' + i);
 				diffRecObj.style.backgroundColor = "transparent";
@@ -151,18 +156,22 @@ function diffSelFunc() {
 rangeObj.addEventListener('input', diffSelFunc);
 
 function startGame() {
+	pObj = document.querySelector('.output');
+	pObj.textContent = "";
+	pGifObj = document.querySelector(".outputGif");
+	pGifObj.style.display = "none";
 	console.log("Starting Game at " + setDiff + " difficulty.");
 	if (setDiff == 1) {
-		var ranNum = Math.floor(Math.random()*10) + 1;
+		ranNum = Math.floor(Math.random()*10) + 1;
 		console.log("Random number is: " + ranNum);
 	} else if (setDiff == 2) {
-		var ranNum = Math.floor(Math.random()*50) + 1;
+		ranNum = Math.floor(Math.random()*50) + 1;
 		console.log("Random number is: " + ranNum);
 	} else if (setDiff == 3) {
-		var ranNum = Math.floor(Math.random()*100) + 1;
+		ranNum = Math.floor(Math.random()*100) + 1;
 		console.log("Random number is: " + ranNum);
 	} else {
-		var ranNum = Math.floor(Math.random()*1000) + 1;
+		ranNum = Math.floor(Math.random()*1000) + 1;
 		console.log("Random number is: " + ranNum);
 	}
 }
@@ -172,7 +181,7 @@ startBtnObj = document.getElementById("startBtn");
 startBtnObj.addEventListener('click', startGame);
 
 function checkNum() {
-	console.log("Check Number Function Operational");
+	//console.log("Check Number Function Operational");
 	console.log("Global Random Number: " + ranNum);
 	userGuessObj = document.getElementById("guessvalue");
 	//console.log(userGuessObj);
@@ -181,6 +190,49 @@ function checkNum() {
 	pObj = document.querySelector('.output');
 	//console.log(pObj);
 	pObj.textContent += userGuess + ' ';
+
+	count += 1;
+	console.log("Count: " + count + " of 10");
+
+	if (userGuess < ranNum) {
+		console.log("Guess was too low!");
+		pTextObj = document.querySelector('.outputText');
+		pTextObj.textContent = "Guess was too low!";
+	} else if (userGuess > ranNum) {
+		console.log("Guess was too high!");
+		pTextObj = document.querySelector('.outputText');
+		pTextObj.textContent = "Guess was too High!";
+	}
+
+	if (userGuess == ranNum) {
+		console.log("You win!");
+		pObj.textContent = "You WIN!!!!";
+		pGifObj = document.querySelector(".outputGif");
+		pGifObj.style.display = "block";
+
+	}
+
+	if (count < 10) {
+		//console.log("Continuing to next guess")
+	}
+
+	if (count > 10) {
+		count = 0;
+		pObj.textContent = " ";
+		resetGame();
+	}
+}
+
+function resetGame() {
+	if (setDiff == 1) {
+		alert("Thank you for playing, the game is already on the easiest level, but keep trying!");
+		startGame();
+	} else {
+		setDiff -= 1;
+		console.log("New Difficulty: " + setDiff);
+		alert("Thank you for playing the number guessing game! The difficulty has been reduced by 1 level, please try again!");
+		startGame();
+	}
 }
 
 checkBtnObj = document.getElementById("checkBtn");
