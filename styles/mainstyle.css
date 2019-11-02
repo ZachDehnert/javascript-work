@@ -28,6 +28,10 @@ h3 {
     margin:2% 0 0 2%;
 }
 
+h4 {
+    padding:2%;
+}
+
 a {
     color: #0000A0;
     font-size: 110%;
@@ -143,6 +147,27 @@ input[type=text], input[type=password] {
 .dog {
     width:400px;
     height:400px;
+}
+
+#num-left {
+    /*background-color: red;*/
+    float:left;
+    width:49%;
+    margin-right:2%;
+}
+
+#num-left p {
+    padding:2%;
+}
+
+#num-right p {
+    padding:2%;
+}
+
+#num-right {
+    /*background-color: blue;*/
+    float:left;
+    width:49%;
 }
 
 .leftContent {

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Week 6 Participation</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <h3 style="clear:both;">Number Methods and Properties</h3>
+
+    <section class="sec-containers">
+
+        <div id="num-left">
+            <h4>#1 toString() Variable Number Method</h4>
+            <p>The code below will return x as a string. The benefit in the real world would be to use this in a situation where the value is not being manipulated by math but instead needs to be used as text. </p>
+            <pre>
+                var x = 777;
+                x.toString();
+            </pre>
+            <p id="output_1"></p>
+
+            <h4>#3 toString() Expression Number Method</h4>
+            <p>The code below will return the expression as a string. This could be beneficial if you needed to output a number as text, but the number needs to be processed via an expression first.</p>
+            <pre>
+                (777 + 7000).toString();
+            </pre>
+            <p id="output_3"></p>
+
+            <h4>#5 toFixed() Number Method</h4>
+            <p>The code below will return z as a fixed value. This could be beneficial if there was a limit to the data type you are using, or if you wanted to calculate gas prices with great precision and return it as a fixed dollar amount.</p>
+            <pre>
+                var z = 77.7666666;
+                z.toFixed(2);
+            </pre>
+            <p id="output_5"></p>
+
+            <h4>#7 valueOf() Number Method</h4>
+            <p>The code below will return the variable value if it is a literal and will process an expression and return that value. If you have an object or method that needs to be a primitve value, this will do it.</p>
+            <pre>
+                var b = 777;
+                var c = 7000;
+                (b + c).valueOf();
+            </pre>
+            <p id="output_7"></p>
+
+            <h4>#9 MIN_VALUE Number Property</h4>
+            <p>The code below will return the smallest possible number in Javascript. This could be helpful in an if statement where you need a low bottom.</p>
+            <pre>
+                var e = Number.MIN_VALUE;
+            </pre>
+            <p id="output_9"></p>
+
+            <h4>#11 NEGATIVE_INFINITY Number Property</h4>
+            <p>The code below will return the overflow of -Infinity. This is helpful if you are doing the same tasks as Infinity but with negative numbers.</p>
+            <pre>
+                var g = Number.NEGATIVE_INFINITY;
+            </pre>
+            <p id="output_11"></p>
+
+            <h4>#13 isFinite() Number Method</h4>
+            <p>The code below will return a true or false depending on if the number is finite, in this case, False. This could be helpful in validation. If there is a large web program using large numbers, then there may need to be validation to ensure there is not an overflow.</p>
+            <pre>
+                var i = Number.isFinite(Infinity);
+            </pre>
+            <p id="output_13"></p>
+
+            <h4>#15 isSafeInteger() Number Method</h4>
+            <p>The code below will return a true or false depending on if the number is 'safe', below, it resolves as False. A safe number is any integer from (2<sup>53</sup> - 1) to -(2<sup>53</sup> - 1). I imagine this is very helpful in advanced Javscript programming.</p>
+            <pre>
+                var k = Number.isSafeInteger(77.77);
+            </pre>
+            <p id="output_15"></p>
+
+            <h4>#17 prototype Number Method</h4>
+            <p>The code below will return a regular output that was developed from a custom method. You could create a lot of small simple methods or scale it to large purposes in business.</p>
+            <pre>
+                Number.prototype.methodFourteen = function() {
+                    return this.valueOf() + 3;
+                };
+
+                var m = 4;
+                document.getElementById("output_17").innerHTML = m.methodFourteen();
+            </pre>
+            <p id="output_17"></p>
+
+            <h4>#19 Number.EPSILON Number Property</h4>
+            <p>The code below will return whether there is a difference between two numbers by incrementing from one to the next with the smallest possible incremement. I imagine this is helpful in advanced programming. Below, there is no difference between the two numbers, so it is false. To be honest, I don't totally understand EPSILON.</p>
+            <pre>
+                var o = 1000000.1 + 0.2;
+                let p = 1000000.3;
+                document.getElementById("output_19").innerHTML = Math.abs(o - p) < Number.EPSILON;
+            </pre>
+            <p id="output_19"></p>
+        </div>
+
+        <div id="num-right">
+            <h4>#2 toString() Literal Number Method</h4>
+            <p>The code below will return a literal as a string. If there is no need for a variable, you could enter in the number you need to use as text.</p>
+            <pre>
+                (777).toString();
+            </pre>
+            <p id="output_2"></p>
+
+            <h4>#4 toExponential() Number Method</h4>
+            <p>The code below will return y as an exponential. This could be helpful in math applications or physics applications where they are working with large numbers that need to be truncated.</p>
+            <pre>
+                var y = 777.66;
+                y.toExponential(3);
+            </pre>
+            <p id="output_4"></p>
+
+            <h4>#6 toPrecision() Number Method</h4>
+            <p>The code below will return the variable as a precise number. There is a small difference between toFixed() and toPrecision(). Fixed will return the length after the decimal point while Precision will return the number's total length. In advanced programming I am sure that difference matters.</p>
+            <pre>
+                var a = 776.6666666;
+                a.toPrecision(3);
+            </pre>
+            <p id="output_6"></p>
+
+            <h4>#8 MAX_VALUE Number Property</h4>
+            <p>The code below will return the largest number possible in Javascript. This could be helpful if you needed a large ceiling when processing an if statement.</p>
+            <pre>
+                var d = Number.MAX_VALUE;
+            </pre>
+            <p id="output_8"></p>
+
+            <h4>#10 POSITIVE_INFINITY Number Property</h4>
+            <p>The code below will return the value of Infinity. This is helpful if you needed some kind of validation if a number goes over the maximum number in Javascript.</p>
+            <pre>
+                var f = Number.POSITIVE_INFINITY;
+            </pre>
+            <p id="output_10"></p>
+
+            <h4>#12 NaN - Not a Number, Number Property</h4>
+            <p>The code below will return the value of NaN. This could be helpful in an if statement where you are performing validation to see if the input is a number or not.</p>
+            <pre>
+                var h = Number.NaN;
+            </pre>
+            <p id="output_12"></p>
+
+            <h4>#14 isInteger() Number Method</h4>
+            <p>The code below will return a true or false depending on if the number is an integer, in this case, False. This would be helpful if there is a form that needs this kind of validation, eg, a number for a date.</p>
+            <pre>
+                var j = Number.isInteger(77.77);
+            </pre>
+            <p id="output_14"></p>
+
+            <h4>#16 constructor Number Method</h4>
+            <p>The code below will return the function that created the number's prototype. I am not sure where this would be useful. It might be helpful finding a bug in an output with an unknown function prototype.</p>
+            <pre>
+                var l = 777;
+                document.getElementById("output_16").innerHTML = l.constructor;
+            </pre>
+            <p id="output_16"></p>
+
+            <h4>#18 toLocaleString() Number Method</h4>
+            <p>The code below will return a value that is using a different language for its output. In the example below the number '7437734' will be converted to Arabic.</p>
+            <pre>
+                var n = new Number(7437734).toLocaleString("ar-EG");
+            </pre>
+            <p style="margin-bottom:10%;" id="output_18"></p>
+
+            <h4>#20 parseInt() Number Method</h4>
+            <p>The code below will return a number from a string that may contain non numbers. If a value is already text, I could see how it would be helpful to be able to convert it to an integer for math processing.</p>
+            <pre>
+                var q = "77.77abdjk";
+                Number.parseFloat(q);
+            </pre>
+            <p id="output_20"></p>
+        
+        </div>
+
+
+    </section>
+
+    <script>
+            var x = 777;
+            x.toString();
+    
+            document.getElementById("output_1").innerHTML = "The result would be: " + x;
+            document.getElementById("output_2").innerHTML = "The result would be: " + (777).toString();
+            document.getElementById("output_3").innerHTML = "The result would be: " + (777 + 7000).toString();
+            
+            var y = 777.66;
+
+            document.getElementById("output_4").innerHTML = "The result would be: " + y.toExponential(3);
+
+            var z = 77.7666666;
+            document.getElementById("output_5").innerHTML = "The result would be: " + z.toFixed(2);
+
+            var a = 776.6666666;
+            document.getElementById("output_6").innerHTML = "The result would be: " + a.toPrecision(3);
+
+            var b = 777;
+            var c = 7000;
+            document.getElementById("output_7").innerHTML = "The result would be: " + (b + c).valueOf();
+
+            var d = Number.MAX_VALUE;
+            document.getElementById("output_8").innerHTML = "The result would be: " + d;
+
+            var e = Number.MIN_VALUE;
+            document.getElementById("output_9").innerHTML = "The result would be: " + e;
+
+            var f = Number.POSITIVE_INFINITY;
+            document.getElementById("output_10").innerHTML = "The result would be: " + f;
+
+            var g = Number.NEGATIVE_INFINITY;
+            document.getElementById("output_11").innerHTML = "The result would be: " + g;
+
+            var h = Number.NaN;
+            document.getElementById("output_12").innerHTML = "The result would be: " + h;
+
+            var i = Number.isFinite(Infinity);
+            document.getElementById("output_13").innerHTML = "The result would be: " + i;
+
+            var j = Number.isInteger(77.77);
+            document.getElementById("output_14").innerHTML = "The result would be: " + j;
+
+            var k = Number.isSafeInteger(77.77);
+            document.getElementById("output_15").innerHTML = "The result would be: " + k;
+
+            var l = 777;
+            document.getElementById("output_16").innerHTML = "The result would be: " + l.constructor;
+
+            Number.prototype.methodFourteen = function() {
+                return this.valueOf() + 3;
+            };
+
+            var m = 4;
+            document.getElementById("output_17").innerHTML = "The result would be: " + m.methodFourteen();
+
+            var n = Number(7437734).toLocaleString("ar-EG");
+            document.getElementById("output_18").innerHTML = "The result would be: " + n;
+
+            var o = 1000000.1 + 0.2;
+            let p = 1000000.3;
+            document.getElementById("output_19").innerHTML = Math.abs(o - p) < Number.EPSILON;
+
+            var q = "77.77abdjk";
+            document.getElementById("output_20").innerHTML = "The result would be: " + Number.parseFloat(q);
+    </script>
+
+  </body>
+
+</html>
