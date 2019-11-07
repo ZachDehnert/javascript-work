@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 4</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator1.html">Part 1 | Product Calculator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="calculator2.html">Part #2 - Calc 2</a></li>
+        <li style="float:left;padding-right:4%;"><a href="examskills1.html">Part #3 - Exam Skills</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 1 | Product Calculator</h3>
+
+    <section class="sec-containers">
+
+        <h4>Welcome to Car Dealer Inc.</h4>
+
+        <p style="margin-bottom:4%;">
+            This is a wholesale mock website. Below, you can choose different colors of a Tesla Model S. Pick a color and if you want advanced rims or stock, and then put in the wholesale options.
+        </p>
+
+    </section>
+
+    <section class="sec-containers">
+
+        
+
+        <!-- Four Different Colors -->
+
+        <div id="calc_summary">
+
+            <h5>Feature Pick Summary</h5>
+
+            <label style="display:block;padding:6% 0 6% 2%;color:#fff;text-decoration: underline;">Color/Tire Feature Addons:</label>
+
+            <p id="int_total">Model S: $</p>
+            
+            <p id="color"></p>
+
+            <p id="tire"></p>
+
+            <p id="total"></p>
+
+            <div id="user_input_container">
+
+                <form>
+
+                    <div class="form-sections">
+                        <p style="margin:2% 0 0% 0%;color:#222;">Quantity:</p><br>
+                        <input id="quantity-form" type="text">
+                        <p style="margin:0 0 0% 2%;color:#222;">Select Country:</p>
+                    </div>
+                    <div class="form-sections">
+                        <select id="select-form" name="countries">
+                                <option class="select-option" value="canada">Canada - Shipping: $20,000</option>
+                                <option class="select-option" value="mexico">Mexico - Shipping: $20,000</option>
+                                <option class="select-option" value="us">USA - Shipping: $5,000</option>
+                                <option class="select-option" value="uk">United Kingdom - Shipping: $80,000</option>
+                        </select>
+                        
+                    </div>
+                    <div class="form-sections">
+                            <label for="yes_no_radio">Would you like a backup set of tires per each car?</label>
+                            <p style="text-align:center;">
+                            <input type="radio" name="yes_no" checked>Yes</input>
+                            </p>
+                            <p style="text-align:center;">
+                            <input type="radio" name="yes_no">No</input>
+                            </p>
+                            <button onclick="shippingTotal()" id="currentTotalBtn">Update Current Total</button>
+                            
+                    </div>
+                    
+                    
+                </form>
+
+            </div>
+
+        </div>
+
+        <div id="color_calc_container">
+
+            <div id="color_picker">
+                
+                <div onclick = "whiteCalc()" id="white"></div>
+                <div onclick = "blackCalc()" id="black"></div>
+                <div onclick = "darkGrayCalc()" id="dark_gray"></div>
+                <div onclick = "blueCalc()" id="blue"></div>
+                <div onclick = "redCalc()" id="red"></div>
+            </div>
+
+            <div id="car_container">
+                <img id="model_s_img_mods" class="model_s_img_mods" src="images/choose_a_color.jpg">
+            </div>
+
+        </div>
+
+        <div id="tire_picker">
+
+            <div style="background-color: #222;height:100px;"><h5 style="text-align: center;padding: 6% 0 0 0%;">Choose a Tire</h5></div>
+            <div id="white_tire_one" onclick="Tire1()"></div>
+            <div id="white_tire_two" onclick="Tire2()"></div>
+
+
+        </div>
+
+
+
+    </section>
+
+    <script>
+
+        console.log("Internal JS is connected.");
+
+        var total = 70000;
+        var colorCost = 0;
+        var tireCost = 0;
+        var calcSwitch = 0;
+
+        function whiteCalc() {
+            console.log("White image function connected");
+            console.log("Initial Total: " + total);
+            console.log("Initial Tire Total: " + tireCost);
+            document.getElementById("int_total").innerHTML += total;
+            document.getElementById("color").innerHTML = "White is included with initial total: $0";
+            document.getElementById("tire").innerHTML = "These are the stock tires: $0";
+            document.getElementById("model_s_img_mods").src = "images/model_s_white.jpg";
+            document.getElementById("tire_picker").style.display = "block";
+            document.getElementById("currentTotalBtn").style.display = "block";
+            document.getElementById("user_input_container").style.display = "block";
+            colorCost = 0;
+            tireCost = 0;
+            calcSwitch = 1;
+            let final = total + tireCost + colorCost;
+            document.getElementById("total").innerHTML = "Current Total: $" + final;
+        }
+
+        function blackCalc() {
+            colorCost = 1500;
+            console.log("White image function connected");
+            console.log("Initial Total: " + total);
+            console.log("Initial Tire Total: " + tireCost);
+            document.getElementById("int_total").innerHTML = "Model S: $" + total;
+            document.getElementById("color").innerHTML = "Black: $1500";
+            document.getElementById("tire").innerHTML = "These are the stock tires: $0";
+            document.getElementById("model_s_img_mods").src = "images/model_s_black.jpg";
+            document.getElementById("tire_picker").style.display = "block";
+            document.getElementById("currentTotalBtn").style.display = "block";
+            colorCost = 1500;
+            tireCost = 0;
+            calcSwitch = 2;
+            let final = total + tireCost + colorCost;
+            document.getElementById("total").innerHTML = "Current Total: $" + final;
+            
+        }
+
+        function darkGrayCalc() {
+            console.log("White image function connected");
+            console.log("Initial Total: " + total);
+            console.log("Initial Tire Total: " + tireCost);
+            document.getElementById("int_total").innerHTML = "Model S: $" + total;
+            document.getElementById("color").innerHTML = "Dark Gray: $1500";
+            document.getElementById("tire").innerHTML = "These are the stock tires: $0";
+            document.getElementById("model_s_img_mods").src = "images/model_s_darkGray.jpg";
+            document.getElementById("tire_picker").style.display = "block";
+            document.getElementById("currentTotalBtn").style.display = "block";
+            colorCost = 1500;
+            tireCost = 0;
+            calcSwitch = 3;
+            let final = total + tireCost + colorCost;
+            document.getElementById("total").innerHTML = "Current Total: $" + final;
+        }
+
+        function blueCalc() {
+            console.log("White image function connected");
+            console.log("Initial Total: " + total);
+            console.log("Initial Tire Total: " + tireCost);
+            document.getElementById("int_total").innerHTML = "Model S: $" + total;
+            document.getElementById("color").innerHTML = "Blue: $1500";
+            document.getElementById("tire").innerHTML = "These are the stock tires: $0";
+            document.getElementById("model_s_img_mods").src = "images/model_s_blue.jpg";
+            document.getElementById("tire_picker").style.display = "block";
+            document.getElementById("currentTotalBtn").style.display = "block";
+            colorCost = 1500;
+            tireCost = 0;
+            calcSwitch = 4;
+            let final = total + tireCost + colorCost;
+            document.getElementById("total").innerHTML = "Current Total: $" + final;
+        }
+
+        function redCalc() {
+            console.log("White image function connected");
+            console.log("Initial Total: " + total);
+            console.log("Initial Tire Total: " + tireCost);
+            document.getElementById("int_total").innerHTML = "Model S: $" + total;
+            document.getElementById("color").innerHTML = "Red: $2500";
+            document.getElementById("tire").innerHTML = "These are the stock tires: $0";
+            document.getElementById("model_s_img_mods").src = "images/model_s_red.jpg";
+            document.getElementById("tire_picker").style.display = "block";
+            document.getElementById("currentTotalBtn").style.display = "block";
+            colorCost = 2500;
+            tireCost = 0;
+            calcSwitch = 5;
+            let final = total + tireCost + colorCost;
+            document.getElementById("total").innerHTML = "Current Total: $" + final;
+        }
+
+            function Tire1() {
+                console.log("White Tire image function 1 connected");
+                tireCost = 0;
+                console.log(tireCost);
+                document.getElementById("tire").innerHTML = "These are the stock tires: $0";
+                if (calcSwitch == 1) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_white.jpg";
+                    tireCost = 0;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 2) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_black.jpg";
+                    tireCost = 0;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 3) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_darkGray.jpg";
+                    tireCost = 0;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 4) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_blue.jpg";
+                    tireCost = 0;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 5) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_red.jpg";
+                    tireCost = 0;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                }
+            }
+
+            function Tire2() {
+                console.log("White Tire image function 2 connected");
+                tireCost = 1500;
+                console.log(tireCost);
+                document.getElementById("tire").innerHTML = "Advanced Rims: $4500";
+                if (calcSwitch == 1) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_white_tires.jpg";
+                    tireCost = 4500;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 2) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_black_tires.jpg";
+                    tireCost = 4500;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 3) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_darkGray_tires.jpg";
+                    tireCost = 4500;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 4) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_blue_tires.jpg";
+                    tireCost = 4500;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                } else if (calcSwitch == 5) {
+                    document.getElementById("model_s_img_mods").src = "images/model_s_red_tires.jpg";
+                    tireCost = 4500;
+                    let final = total + tireCost + colorCost;
+                    document.getElementById("total").innerHTML = "Current Total: $" + final;
+                }
+            }
+
+        function shippingTotal() {
+            console.log("shipping total connected");
+        }
+
+    </script>
+
+  </body>
+
+</html>

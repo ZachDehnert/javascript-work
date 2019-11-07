@@ -32,6 +32,13 @@ h4 {
     padding:2%;
 }
 
+h5 {
+    padding:2% 0 4% 2%;
+    color:#fff;
+    text-decoration: underline;
+    font-size:16pt;
+}
+
 a {
     color: #0000A0;
     font-size: 110%;
@@ -324,4 +331,279 @@ input[type=text], input[type=password] {
     width:50px;
     height:50px;
     border-radius: 50%;
+}
+
+#color_picker {
+    background-color:transparent;
+    width:100%;
+    height:100px;
+    overflow:hidden;
+    display:block;
+    margin:0px auto;
+}
+    #white {
+        background-color: white;
+        width:20%;
+        height:100px;
+        float:left;
+        
+    }
+    #white:hover {
+        width:20%;
+        height:100px;
+        float:left;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
+    }
+
+        #white_tire_one {
+            width:100%;
+            height:258px;
+            background-image: url("../images/tire_two.jpg");
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position: center;
+            
+        }
+
+            #white_tire_one:hover {
+                width:100%;
+                height:258px;
+                background-image: url("../images/tire_two.jpg");
+                background-size: contain;
+                background-repeat:no-repeat;
+                background-position: center;
+                -moz-box-shadow:    inset 0 0 10px #000000;
+                -webkit-box-shadow: inset 0 0 10px #000000;
+                box-shadow:         inset 0 0 10px #000000;
+                
+            }
+
+        #white_tire_two {
+            width:100%;
+            height:258px;
+            background-image: url("../images/tire_one.jpg");
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+
+            #white_tire_two:hover {
+                width:100%;
+                height:258px;
+                background-image: url("../images/tire_one.jpg");
+                background-size: contain;
+                background-repeat:no-repeat;
+                background-position: center;
+                -moz-box-shadow:    inset 0 0 10px #000000;
+                -webkit-box-shadow: inset 0 0 10px #000000;
+                box-shadow:         inset 0 0 10px #000000;
+            }
+
+    #black {
+        background-color: #222;
+        width:20%;
+        height:100px;
+        float:left;
+        
+    }
+    #black:hover {
+        width:20%;
+        height:100px;
+        float:left;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
+    }
+    #dark_gray {
+        background-color: #43464B;
+        width:20%;
+        height:100px;
+        float:left;
+    }
+    #dark_gray:hover {
+        width:20%;
+        height:100px;
+        float:left;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
+    }
+    #blue {
+        background-color: blue;
+        width:20%;
+        height:100px;
+        float:left;
+    }
+    #blue:hover {
+        width:20%;
+        height:100px;
+        float:left;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
+    }
+    #red {
+        background-color: red;
+        width:20%;
+        height:100px;
+        float:left;
+    }
+    #red:hover {
+        width:20%;
+        height:100px;
+        float:left;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
+    }
+
+#int_total {
+    margin:2% 0 6% 2%;
+    color:#fff;
+}
+
+#calc_summary {
+    width:20%;
+    height:617px;
+    background-color:#222;
+    float:left;
+    border-top:1px solid #fff;
+    border-left:1px solid #fff;
+    border-bottom:1px solid #fff;
+}
+
+    #user_input_container {
+
+
+    }
+
+#buyBtn {
+    width:86%;
+
+}
+
+.form-sections {
+    width:100%;
+    background-color: #f0ead6;
+    overflow: hidden;
+}
+
+#quantity-form {
+    margin:0% 0 4% 12%;
+}
+
+#select-form {
+    margin:4% 0 4% 12%;
+    padding:2% 0 2% 4%;
+}
+
+.select-option {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px;
+}
+
+#color {
+    margin:2% 0 6% 2%;
+    color:#fff;
+}
+
+#tire {
+    margin:2% 0 6% 2%;
+    color:#fff;
+}
+
+#total {
+    margin:2% 0 6% 2%;
+    color:#fff;
+}
+
+#color_calc_container {
+    width:60%;
+    height:617px;
+    background-color:transparent;
+    float:left;
+    border-bottom:1px solid #222;
+}
+
+#tire_picker {
+    width:20%;
+    height:617px;
+    background-color:white;
+    float:left;
+    border-left:1px solid #222;
+    border-bottom:1px solid #222;
+    border-right:1px solid #222;
+}
+
+#car_container {
+    background-color:transparent;
+    width:100%;
+    height:auto;
+    display:block;
+    margin:0px auto;
+}
+
+.model_s_img_mods {
+    width:100%;
+    height:auto;
+}
+
+#findP {
+    margin-top:2%;
+}
+
+#string-table {
+    border-collapse: collapse;
+}
+
+.small {
+    border: 1px solid;
+    margin:0;
+    padding:1%;
+    overflow:hidden;
+    background-color: #000080;
+    width:5%;
+    color:#fff;
+}
+
+.medium {
+    border: 1px solid;
+    margin:0;
+    padding:1%;
+    overflow:hidden;
+    background-color: #000080;
+    width:15%;
+    color:#fff;
+}
+
+.medium-large {
+    border: 1px solid;
+    margin:0;
+    padding:1%;
+    overflow:hidden;
+    background-color: #000080;
+    width:30%;
+    color:#fff;
+}
+
+.large {
+    border: 1px solid;
+    margin:0;
+    padding:1%;
+    overflow:hidden;
+    background-color: #000080;
+    width:35%;
+    color:#fff;
+}
+
+#string-table td{
+    border: 1px solid;
+    margin:0;
+    padding:1%;
+    background-color: #fff;
+    color:#222;
 }

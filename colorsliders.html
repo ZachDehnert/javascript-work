@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 4</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator.html">Part 1 | Product Calculator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="colorsliders.html">Part 2 | Hexadecimal Colors from Range Sliders</a></li>
+        <li style="float:left;padding-right:4%;"><a href="artclock.html">Part 3 | Artsy Clock</a></li>
+        <li style="float:left;padding-right:4%;"><a href="realclock.html">Part 4 | Realistic Uses of Time</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 2 | Hexadecimal Colors from Range Sliders</h3>
+
+    <section class="sec-containers">
+
+        <div id="color-div" style="background-color: #f0ead6;width:50%;padding:2%;float:left;">
+
+            <h1 id="h1-text">Change Background Color Via Range</h1>
+
+            <h2 id="h2-text"> Select Your Color <span id="colorOutput"></span></h2>
+
+            <p>Red: </p>
+            <input type="range" id="rangeRed" value="0" min="0" max="255">
+
+            <p>Green: </p>
+            <input type="range" id="rangeGreen" value="0" min="0" max="255">
+
+            <p>Blue: </p>
+            <input type="range" id="rangeBlue" value="0" min="0" max="255">
+
+        </div>
+
+        <div id="color-div" style="background-color: transparent;width:50%;padding:2%;float:left;">
+
+                <h1 id="font-h1">Change Font Size Via Range</h1>
+    
+                <p id="font-p">Text Size: </p>
+                <input type="range" id="fontSize" value="100" min="0" max="200">
+    
+        </div>
+
+
+    </section>
+
+    <script>
+        console.log("Internal JS is connected");
+
+        var red = 000;
+        var green = 000;
+        var blue = 000;
+
+        function changeColor() {
+            red = document.getElementById("rangeRed").value;
+            green = document.getElementById("rangeGreen").value;
+            blue = document.getElementById("rangeBlue").value;
+            let color = "rgb(" + red + "," + green + "," + blue + ")";
+            
+            
+            var rgb = red + green + blue;
+            //console.log(rgb);
+
+            let hexRed = rgbHex(red);
+            let hexGreen = rgbHex(green);
+            let hexBlue = rgbHex(blue);
+
+            hexCon = hexRed + hexGreen + hexBlue;
+
+            //console.log(hexCon);
+
+            document.getElementById("colorOutput").innerHTML = ": #" + hexCon;
+            document.body.style.backgroundColor = "#" + hexCon;
+            document.getElementById("h1-text").style.color = "#" + hexCon;
+            document.getElementById("h1-text").style.filter = "invert(100%)";
+            document.getElementById("font-h1").style.color = "#" + hexCon;
+            document.getElementById("font-h1").style.filter = "invert(100%)";
+            document.getElementById("font-p").style.color = "#" + hexCon;
+            document.getElementById("font-p").style.filter = "invert(100%)";
+        }
+
+        function changeFont() {
+
+            fontSizeTo = document.getElementById("fontSize").value;
+
+            document.getElementById("font-p").innerHTML = "Text Size: " + fontSizeTo + "%";
+
+            document.getElementById("h1-text").style.fontSize = fontSizeTo + "%";
+            document.getElementById("h2-text").style.fontSize = fontSizeTo + "%";
+            document.getElementById("font-h1").style.fontSize = fontSizeTo + "%";
+            document.getElementById("font-p").style.fontSize = fontSizeTo + "%";
+        }
+
+        var rgbHex = function (rgb) {
+            var hex = Number(rgb).toString(16);
+            if (hex.length < 2) {
+                hex = "0" + hex;
+            }
+            return hex;
+        }
+
+        document.getElementById("rangeRed").addEventListener("input", changeColor);
+        document.getElementById("rangeGreen").addEventListener("input", changeColor);
+        document.getElementById("rangeBlue").addEventListener("input", changeColor);
+        document.getElementById("fontSize").addEventListener("input", changeFont);
+
+        
+
+    </script>
+
+  </body>
+
+</html>

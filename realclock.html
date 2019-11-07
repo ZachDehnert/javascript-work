@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 4</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- Internal Styles -->
+
+    <style>
+
+    #time-block {
+        width:12%;
+        height:400px;
+        background-color: red;
+        float:left;
+        border-left:1px solid #222;
+    }
+
+    #time-block-2 {
+        width:12%;
+        height:400px;
+        background-color: red;
+        float:left;
+        border-left:1px solid #222;
+    }
+
+    #time-block-3 {
+        width:12%;
+        height:400px;
+        background-color: red;
+        float:left;
+        border-left:1px solid #222;
+    }
+
+    #time-block-4 {
+        width:12%;
+        height:400px;
+        background-color: red;
+        float:left;
+        border-left:1px solid #222;
+    }
+    
+    
+    
+    </style>
+
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body onload="startTime()">
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator.html">Part 1 | Product Calculator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="colorsliders.html">Part 2 | Hexadecimal Colors from Range Sliders</a></li>
+        <li style="float:left;padding-right:4%;"><a href="artclock.html">Part 3 | Artsy Clock</a></li>
+        <li style="float:left;padding-right:4%;"><a href="realclock.html">Part 4 | Realistic Uses of Time</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 4 | Realistic Uses of Time</h3>
+
+    <section class="sec-containers">
+        <div style="width:100%;background-color:transparent;padding:2%;">
+            <p style="text-align:center;">Real Clock in 24H Format</p>
+            <p style="text-align:center;">Gray = Finished</p>
+            <p style="text-align:center;">Yellow = In Progress</p>
+            <p style="text-align:center;">Red = Up Coming</p>
+            <p>Set the Hour to see the Calendar Change:</p>
+            <input id="hourGet" type="text">
+        
+        </div>
+
+        <div id="color-div" style="border: 2px solid #222;background-color: #fff;width:10%;padding:2%;float:left;margin-right:2%;"></div>
+
+
+        <div id="time-block">
+
+            <p style="padding:4%;">Early Morning Training:<br> 8 AM to 12 PM</p>
+
+        </div>
+
+        <div id="time-block-2">
+
+                <p style="padding:4%;">Lunch:<br> 12 PM to 1 PM</p>
+    
+        </div>
+
+        <div id="time-block-3">
+
+                <p style="padding:4%;">Afternoon Training:<br> 1 PM to 4 PM</p>
+    
+        </div>
+
+        <div id="time-block-4">
+
+                <p style="padding:4%;">Training Summary:<br> 4 PM to 5 PM</p>
+    
+        </div>
+
+
+    </section>
+
+    <script>
+        console.log("Internal JS is connected");
+
+        function startTime() {
+            var today = new Date();
+            //var h = today.getHours();
+            var h = document.getElementById("hourGet").value;
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('color-div').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+            let timeTotal = h+m+s;
+            //console.log(timeTotal);
+            if (timeTotal >= 80000 & timeTotal <= 115959) {
+                document.getElementById("time-block").style.backgroundColor = "yellow";
+                document.getElementById("time-block-2").style.backgroundColor = "red";
+                document.getElementById("time-block-3").style.backgroundColor = "red";
+                document.getElementById("time-block-4").style.backgroundColor = "red";
+            } else if (timeTotal >= 120000 & timeTotal <= 125959) {
+                document.getElementById("time-block").style.backgroundColor = "gray";
+                document.getElementById("time-block-2").style.backgroundColor = "yellow";
+                document.getElementById("time-block-3").style.backgroundColor = "red";
+                document.getElementById("time-block-4").style.backgroundColor = "red";
+            } else if (timeTotal >= 13 & timeTotal <= 155959) {
+                document.getElementById("time-block").style.backgroundColor = "gray";
+                document.getElementById("time-block-2").style.backgroundColor = "gray";
+                document.getElementById("time-block-3").style.backgroundColor = "yellow";
+                document.getElementById("time-block-4").style.backgroundColor = "red";
+            } else if (timeTotal >= 16 & timeTotal <= 165959) {
+                document.getElementById("time-block").style.backgroundColor = "gray";
+                document.getElementById("time-block-2").style.backgroundColor = "gray";
+                document.getElementById("time-block-3").style.backgroundColor = "gray";
+                document.getElementById("time-block-4").style.backgroundColor = "yellow";
+            } else if (timeTotal >= 17) {
+                document.getElementById("time-block").style.backgroundColor = "gray";
+                document.getElementById("time-block-2").style.backgroundColor = "gray";
+                document.getElementById("time-block-3").style.backgroundColor = "gray";
+                document.getElementById("time-block-4").style.backgroundColor = "gray";
+            }
+            
+        }
+
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+
+
+    </script>
+
+  </body>
+
+</html>

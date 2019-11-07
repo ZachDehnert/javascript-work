@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 4</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- Internal Styles -->
+
+    <style>
+    
+    input[type=range]{
+        border: 2px solid #222; 
+        background: rgba(73, 134, 37, 0.897);
+        width: 60px;
+    }
+
+    input[type=range]::-moz-range-track {
+        width: 30px;
+        height: 5px;
+        background: #ddd;
+        border: none;
+        border-radius: 3px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        border: none;
+        height: 26px;
+        width: 60px;
+        background: #222;
+    }
+
+    /*hide the outline behind the border*/
+    input[type=range]:-moz-focusring{
+        outline: 1px solid white;
+        outline-offset: -1px;
+    }
+
+    input[type=range]:focus::-moz-range-track {
+        background: #ccc;
+    }
+    
+    
+    
+    </style>
+
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body onload="startTime()">
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator.html">Part 1 | Product Calculator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="colorsliders.html">Part 2 | Hexadecimal Colors from Range Sliders</a></li>
+        <li style="float:left;padding-right:4%;"><a href="artclock.html">Part 3 | Artsy Clock</a></li>
+        <li style="float:left;padding-right:4%;"><a href="realclock.html">Part 4 | Realistic Uses of Time</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 3 | Artsy Clock</h3>
+    <h3 style="clear:both;">*** These work best in Firefox ***</h3>
+
+    <section class="sec-containers">
+        <div style="width:100%;background-color:transparent;padding:2%;"><p style="text-align:center;">Artistic Clock in 24H Format</p></div>
+
+        <div id="color-div" style="border: 2px solid #222;background-color: #fff;width:10%;padding:2%;float:left;margin-right:2%;"></div>
+
+
+        <div style="float:left;margin-right:2%;">
+            <p style="font-size:42pt;text-align: center;">H</p>
+            <input type="range" orient="vertical" id="rangeHour" value="0" min="0" max="24">
+        </div>
+        <div style="float:left;margin-right:2%;">
+            <p style="font-size:42pt;text-align: center;">M</p>
+            <input type="range" orient="vertical" id="rangeMinute" value="0" min="0" max="60">
+        </div>
+        <div style="float:left;margin-right:2%;">
+            <p style="font-size:42pt;text-align: center;">S</p>
+            <input type="range" orient="vertical" id="rangeSecond" value="0" min="0" max="60">
+        </div>
+
+
+
+
+    </section>
+
+    <script>
+        console.log("Internal JS is connected");
+
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('color-div').innerHTML =
+            h + ":" + m + ":" + s;
+            document.getElementById("rangeHour").value = h;
+            document.getElementById("rangeMinute").value = m;
+            document.getElementById("rangeSecond").value = s;
+            var t = setTimeout(startTime, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+
+
+    </script>
+
+  </body>
+
+</html>

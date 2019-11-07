@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 4</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <ul>
+        <li style="float:left;padding-right:4%;"><a href="calculator.html">Part 1 | Product Calculator</a></li>
+        <li style="float:left;padding-right:4%;"><a href="colorsliders.html">Part 2 | Hexadecimal Colors from Range Sliders</a></li>
+        <li style="float:left;padding-right:4%;"><a href="artclock.html">Part 3 | Artsy Clock</a></li>
+        <li style="float:left;padding-right:4%;"><a href="realclock.html">Part 4 | Realistic Uses of Time</a></li>
+
+    </ul>
+
+    <h3 style="clear:both;">Part 1 | Product Calculator</h3>
+
+    <section class="sec-containers">
+
+        <h4>The BMI Calculator!</h4>
+
+        <p style="margin-bottom:2%;">Please enter your weight and your height.</p>
+
+        <form style="background-color:#f0ead6;border:1px solid #222;padding:1%;width:20%;">
+            <p style="margin-bottom:1%;">Weight</p><br>
+            <p>Lbs:</p>
+            <input id="weight" type="text"><br>
+            <p style="margin:1% 0 1% 0;">Height</p><br>
+            <p>Feet:</p>
+            <input id="feet" type="text"><br>
+            <p>Inches:</p>
+            <input id="inches" type="text"><br>
+            <input type="button" onclick="bmiCalc()" style="width:80%;" value="Calculate BMI">
+            <p id="bmi-area" style="margin:1% 0 1% 0;"></p>
+        </form>
+
+
+    </section>
+
+    <script>
+        console.log("Internal JS is connected");
+
+
+
+        function bmiCalc() {
+
+            var weight = document.getElementById("weight").value;
+            var feet = document.getElementById("feet").value;
+            var inch = document.getElementById("inches").value;
+
+            var feetToInches = feet * 12;
+
+            //console.log(feetToInches);
+
+            var inches = parseFloat(feetToInches) + parseFloat(inch)
+
+            //console.log(inches);
+
+             var inchesSq = parseFloat(inches) * parseFloat(inches);
+
+            //console.log(inchesSq);
+
+            //console.log(inchesSq);
+
+            var lbsInches = parseFloat(weight) / parseFloat(inchesSq);
+
+            //console.log(lbsInches)
+
+            var BMI = parseFloat(lbsInches) * 703
+
+            var fixedBMI = BMI.toFixed(1);
+
+            document.getElementById("bmi-area").innerHTML = "BMI: " + fixedBMI;
+
+            //var final = ((weight)/((feet*12+inches)*(feet*12+inches)))*703;
+            
+            //console.log(final);
+
+        }
+
+    </script>
+
+  </body>
+
+</html>

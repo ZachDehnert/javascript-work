@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment 4</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <h3 style="clear:both;">Participation #5 - String Methods</h3>
+
+    <section class="sec-containers">
+
+        <h4>String Methods 1 Through 10</h4>
+
+        <ul>
+                <li>x = Video</li>
+                <li>y = Video provides a powerful way to help you prove your point</li>
+        </ul>
+
+        <table id="string-table">
+
+            <tr>
+                <th class="small">Num</th>
+                <th class="medium">JS Method</th>
+                <th class="medium">Trying ..</th>
+                <th class="medium-large">Result ..</th>
+                <th class="large">Comment</th>
+            </tr>
+            <tr>
+                <td>#1</td>
+                <td>substring()</td>
+                <td>str = y.substring(0,6)</td>
+                <td id="o1"></td>
+                <td>"The substring() method extracts the characters from a string, between two specified indices, and returns the new sub string." - <a href="https://www.w3schools.com/jsref/jsref_substring.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#2</td>
+                <td>toLowerCase()</td>
+                <td>str = x.toLowerCase()</td>
+                <td id="o2"></td>
+                <td>"The toLowerCase() method converts a string to lowercase letters." - <a href="https://www.w3schools.com/jsref/jsref_tolowercase.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#3</td>
+                <td>toUpperCase()</td>
+                <td>str = x.toUpperCase()</td>
+                <td id="o3"></td>
+                <td>"The toUpperCase() method converts a string to uppercase letters." - <a href="https://www.w3schools.com/jsref/jsref_touppercase.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#4</td>
+                <td>toString()</td>
+                <td>str = x.toString()</td>
+                <td id="o4"></td>
+                <td>"The toString() method returns the value of a String object." - <a href="https://www.w3schools.com/jsref/jsref_tostring_string.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#5</td>
+                <td>.length</td>
+                <td>str = x.length</td>
+                <td id="o5"></td>
+                <td>"The length property returns the length of a string (number of characters)." - <a href="https://www.w3schools.com/jsref/jsref_length_string.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#6</td>
+                <td>charAt()</td>
+                <td>str = x.charAt(0)</td>
+                <td id="o6"></td>
+                <td>"The charAt() method returns the character at the specified index in a string." - <a href="https://www.w3schools.com/jsref/jsref_charat.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#7</td>
+                <td>concat()</td>
+                <td>str = x.concat(y)</td>
+                <td id="o7"></td>
+                <td>"The concat() method is used to join two or more strings." - <a href="https://www.w3schools.com/jsref/jsref_concat_string.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#8</td>
+                <td>includes()</td>
+                <td>str = y.includes("prove")</td>
+                <td id="o8"></td>
+                <td>"The includes() method determines whether a string contains the characters of a specified string." - <a href="https://www.w3schools.com/jsref/jsref_includes.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#9</td>
+                <td>split(" ")</td>
+                <td>str = y.split(" ")</td>
+                <td id="o9"></td>
+                <td>"The split() method is used to split a string into an array of substrings, and returns the new array." - <a href="https://www.w3schools.com/jsref/jsref_split.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+            <tr>
+                <td>#10</td>
+                <td>slice()</td>
+                <td>str = y.slice(0, 8)</td>
+                <td id="o10"></td>
+                <td>"The slice() method extracts parts of a string and returns the extracted parts in a new string." - <a href="https://www.w3schools.com/jsref/jsref_slice_string.asp" target="_blank">w3schools.com</a></td>
+            </tr>
+
+
+        </table>
+
+        <script>
+            console.log("******* Internal JS is connected *******");
+        
+            let x = "Video";
+            let y = "Video provides a powerful way to help you prove your point";
+
+            // Method #1
+            console.log("Method #1: " + y.substring(0,6));
+            let a = y.substring(0,6);
+            document.getElementById("o1").innerHTML = a;
+
+            // Method #2
+            console.log("Method #2: " + x.toLowerCase());
+            let b = x.toLowerCase();
+            document.getElementById("o2").innerHTML = b;
+
+            // Method #3
+            console.log("Method #3: " + x.toUpperCase());
+            let c = x.toUpperCase();
+            document.getElementById("o3").innerHTML = c;
+
+            // Method #4
+            console.log("Method #4: " + x.toString());
+            let d = x.toString();
+            document.getElementById("o4").innerHTML = d;
+
+            // Method #5
+            console.log("Method #5: " + x.length);
+            let f = x.length;
+            document.getElementById("o5").innerHTML = f;
+
+            // Method #6
+            console.log("Method #6: " + x.charAt(0));
+            let g = x.charAt(0);
+            document.getElementById("o6").innerHTML = g;
+
+            // Method #7
+            console.log("Method #7: " + x.concat(y));
+            let h = x.concat(y);
+            document.getElementById("o7").innerHTML = h;
+
+            // Method #8
+            console.log("Method #8: " + y.includes("prove"));
+            let i = y.includes("prove");
+            document.getElementById("o8").innerHTML = i;
+
+            // Method #9
+            console.log("Method #9: " + y.split(" "));
+            let j = y.split(" ");
+            document.getElementById("o9").innerHTML = j;
+
+            // Method #10
+            console.log("Method #10: " + y.slice(17,25));
+            let k = y.slice(17,25);
+            document.getElementById("o10").innerHTML = k;
+
+
+
+        </script>
+
+        <h4>Find and Replace</h4>
+
+        <p>Find</p>
+        <input type="text" id="find">
+        <p>Replace</p>
+        <input type="text" id="replace"><br>
+        <input type="button" value="Replace" id="button">
+
+        <p id="findP">Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries. Themes and styles also help keep your document coordinated.</p>
+
+        <script>
+
+        console.log("******* Part 2 - Find and Replace *******")
+        
+
+        function findAndReplace() {
+            let find = document.getElementById("find").value;
+            console.log("Words to find: " + find);
+            let replace = document.getElementById("replace").value;
+            console.log("Words to replace: " + replace);
+            let para = document.getElementById("findP");
+            console.log(para);
+            let pattern = new RegExp(find, 'i');
+
+            if (find == ""){
+                document.getElementById("button").value = "Enter something into Find"
+                document.getElementById("find").focus();
+            } else if (replace == "") {
+                document.getElementById("button").value = "Enter something into Replace"
+                document.getElementById("replace").focus();
+            } else {
+                while(para.textContent.indexOf(find) >= 0) {
+                    para.textContent = para.textContent.replace(pattern, replace);
+                } //End of while loop
+            }
+
+
+
+            
+        } // End of function
+
+        document.getElementById("button").addEventListener("click", findAndReplace);
+
+        </script>
+
+    </section>
+
+    <script>
+        
+
+
+    </script>
+
+  </body>
+
+</html>
