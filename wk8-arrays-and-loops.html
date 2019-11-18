@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Assignment #6</title>
+
+    <!-- external styles -->
+
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+
+    <!-- external scripts-->
+
+    <!-- internal scripts -->
+
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1 id="page-header">Zach Dehnert | CIS 133JS Intro to JavaScript</h1>
+        <img id="profile-pic" src="images/profile_pic.jpg">
+    </div>
+        
+    <div id="index-body-header">
+    <h2><a href="index.html">Home</a></h2>
+    </div>
+
+    <h3 style="clear:both;">Assignment #6 - Scripts that Rely on Arrays and Loops</h3>
+    <h5 style="color:#222;margin:1% 0 0 2%;padding:0;">Part 1: Loop Demonstrations</h5>
+
+    <section class="sec-containers">
+
+        <h4>1. Number Input While Loop</h2>
+
+        <p style="margin:0 10% 2% 10%;font-style:italic;">"Trigger a while loop that ask for a number from 1-10. If the user doesn't enter an appropriate number, the script keeps on asking. Ask the for the information with a textbox so that you can “correct” the user if they type text or a wrong number."</p>
+
+        <input type="text" id="in1" value="21">
+        <input type="button" id="in1Btn" value="Submit">
+        <p id="numOut"></p>
+        
+        <h4>2. Count, sum and average numbers</h2>
+
+        <p style="margin:0 10% 2% 10%;font-style:italic;">Ask the user to enter a number. The script will count the number of numbers and provide an average when the user enters a non-number. So, after the first number is entered, the script asks for another, then another, then another. It keeps doing so until I enter a non-number. If I enter the numbers 10, 5, 7, and 31, the script might respond with…”You entered 4 numbers that total 53 and average 13.25</p>
+
+        <input type="text" id="in2" value="0">
+        <input type="button" id="in2Btn" value="Submit">
+
+        <p id="calcOut"></p>
+
+        <h4>3. Do While Loop</h2>
+
+        <p style="margin:0 10% 2% 10%;font-style:italic;">Use a do-while loop to display a list of even numbers. This is literally a list. Use the UL and LI tags to create the list.</p>
+
+        <ul id="ulList">
+            <li id="num0">Number: </li>
+            <li id="num2">Number: </li>
+            <li id="num4">Number: </li>
+            <li id="num6">Number: </li>
+            <li id="num8">Number: </li>
+            <li id="num10">Number: </li>
+            <li id="num12">Number: </li>
+        </ul>
+
+        <input type="button" id="listBtn" value="Calculate List">
+
+        <h4>4. Circle Hexcode For Loop</h2>
+
+        <p style="margin:0 10% 2% 10%;font-style:italic;">Ask the user to pick a red, green, or blue. Then use a for loop to display all variations of the color along with their respective hex codes.</p>
+
+        <input type="button" id="redBtn" value="Red Circles">
+        <input type="button" id="greenBtn" value="Green Circles">
+        <input type="button" id="blueBtn" value="Blue Circles">
+        <input type="button" id="clearBtn" value="Clear">
+
+        <div id="circleOut"></div>
+
+    </section>
+
+    <h5 style="color:#222;margin:1% 0 0 2%;padding:0;">Part 2: Mad Lib (Arrays)</h5>
+
+    <section class="sec-containers-mad-lib">
+
+        <div>
+            <p>Please enter two adjectives. An adjective describes something, like "cold"</p><br>
+            <input class="adjs" type="text" id="arrIn0"><input class="adjs" type="text" id="arrIn1">
+        </div>
+
+        <div>
+            <p>Please enter three nouns. A noune is the name of something, like "book"</p><br>
+            <input type="text" id="arrIn2"><input type="text" id="arrIn3"><input type="text" id="arrIn4">
+        </div>
+
+        <div>
+            <p>Please enter four verbs. A verb is an action, like "Throw"</p><br>
+            <input type="text" id="arrIn5"><input type="text" id="arrIn6"><input type="text" id="arrIn7"><input type="text" id="arrIn8">
+        </div>
+
+        <div>
+            <p>Please enter a type of bird</p><br>
+            <input type="text" id="arrIn9">
+        </div>
+
+        <div>
+            <p>Please enter a room in a house</p><br>
+            <input type="text" id="arrIn10">
+        </div>
+        <div>
+            <p>Please enter a name</p><br>
+            <input type="text" id="arrIn11">
+        </div>
+
+        <div>
+            <p>Please enter a liquid</p><br>
+            <input type="text" id="arrIn12">
+        </div>
+        
+        <div>
+            <p>Please enter a body part</p><br>
+            <input type="text" id="arrIn13">
+        </div>
+
+        <input type="button" id="gathBtn" value="Gather Answers"><br>
+
+        <input type="button" id="madBtn-1" value="Story 1"><input type="button" id="madBtn-2" value="Story 2">
+
+        <div id="madOut-1">
+
+            <p>It was a <span id="story-1-adj1">ADJ</span>, cold November day. I woke up to the <span id="story-1-adj2">ADJ</span> smell of <span id="story-1-bird">BIRD</span> roasting in the <span id="story-1-room">ROOM</span> downstairs. I <span id="story-1-verb1">VERB</span> down the stairs to see if I could help <span id="story-1-verb2">VERB</span> the dinner. My mom said, "See if <span id="story-1-name">NAME</span> needs a fresh <span id="story-1-noun1">NOUN</span>." So I carried a tray of glasses full of <span id="story-1-liquid">LIQUID</span> into the <span id="story-1-verb3">VERB</span> room. When I got there, I couldn't believe my <span id="story-1-body">BODY</span>! There were <span id="story-1-noun2">NOUN</span> <span id="story-1-verb4">VERB</span>ing on the <span id="story-1-noun3">NOUN</span>!</p>
+
+        </div>
+
+        <div id="madOut-2">
+
+            <p>Today, every student has a computer small enough to fit into his <span id="story-2-noun1">NOUN</span>. He can solve any math problem by simply pushing the computer's little <span id="story-2-noun2">NOUN</span>. Computers can add, multiply, divide, and <span id="story-2-verb1">VERB</span>. They can also <span id="story-2-verb2">VERB</span> better than a human. Some computers are <span id="story-2-body">BODY</span>. Others have a/an <span id="story-2-adj1">ADJ</span> screen that shows all kinds of <span id="story-2-noun3">NOUN</span> and <span id="story-2-adj2">ADJ</span> figures.</p>
+
+        </div>
+
+    </section>
+
+    <h5 style="color:#222;margin:1% 0 0 2%;padding:0;">Part 3: Array Management (Arrays)</h5>
+
+    <section class="sec-containers">
+
+        <p style="margin:0 10% 2% 10%;font-style:italic;">This portion of the assignment could be mixed in with the mad libs portion, but separate might make it easier to digest.<p>
+            <ul style="list-style-type: circle;">
+                <li style="list-style-type: circle;margin:0 0% 2% 10%;font-style:italic;">Create a text box with a series of buttons.</li>
+                <li style="list-style-type: circle;margin:0 0% 2% 10%;font-style:italic;">The textbox allows the user to type text and have it stored into an array.</li>
+                <li style="list-style-type: circle;margin:0 0% 2% 10%;font-style:italic;">One button will add the most recent word/string to the array.</li>
+                <li style="list-style-type: circle;margin:0 0% 2% 10%;font-style:italic;">Another button will display the current array to the user.</li>
+                <li style="list-style-type: circle;margin:0 0% 2% 10%;font-style:italic;">A third button will remove the word from the array after the user types in the word and clicks the remove button.</li>
+            </ul>
+
+        <p id="arrTextOut"></p>
+
+        <input id="inText" type="text"><br>
+        <input id="saveArr" type="button" value="Save to Array"><input id="displayArr" type="button" value="Display Array"><input id="appendArr" type="button" value="Add to array"><input id="removeWord" type="button" value="Remove Word From Array">
+
+
+    </section>
+
+
+
+    <script>
+        console.log("******* ******* Internal JS is connected ******* *******");
+        function numInOne() {
+            console.log("**** Number input #1 function is connected ***");
+            let num = document.getElementById("in1").value;
+            console.log("Inputted number: " + num);
+            while (isNaN(num) || num > 10 || num < 1) {
+                console.log("Please enter a number only, all other characters are prohibited. Please try again.");
+                let newNum = prompt("Only numbers between 1 and 10. Please try again.");
+                num = newNum;
+            } 
+            document.getElementById("numOut").innerHTML = "Inputted number: " + num;
+            document.getElementById("in1").value = num;
+        }
+
+        function numInTwo() {
+            console.log("**** Number input #2 function is connected ***");
+            var arr = [];
+            let numIn2 = document.getElementById("in2").value;
+            arr.push(numIn2);
+            console.log("Array contents: " + arr);
+            //let nanCheck = "Nan Check";
+            //let breakValue = isNaN(nanCheck)
+            let breakValue = isNaN(7);
+            console.log("Break value: " + breakValue);
+            //Ask for the number until it breaks on a non number
+            while (breakValue == isNaN(7)) {
+                let nextNum = prompt("Please enter the next number to add");
+                breakValue = isNaN(nextNum);
+                console.log("Next break value: " + breakValue);
+                if (breakValue == isNaN(7)) {
+                    arr.push(nextNum);
+                    console.log(arr);
+                }
+                
+
+            }
+            var numLength = arr.length;
+            console.log("Array Length: " + numLength);
+
+            var arraySum = 0;
+            // Sum the values
+            for (i = 0; i < numLength; i++) {
+                let arrNum = parseInt(arr[i]);
+                arraySum += arrNum;
+                console.log("Sum action: " + i + " " + "Sum So far: " + arraySum);
+            }
+
+            var calcAvg;
+            calcAvg = arraySum / numLength;
+
+            document.getElementById("calcOut").innerHTML = "You entered " + numLength + " numbers that total " + arraySum + " and average " + calcAvg;
+
+        }
+
+        function numList() {
+            let i = 0;
+            let num = 0;
+            do {
+                num = i + 2;
+                console.log("Number is: " + num);
+                //let list = document.getElementById("ulList");
+                //let listLength = document.getElementById("ulList").getElementsByTagName("li").length;
+                //console.log(listLength);
+                let liTag = "num" + i;
+                console.log(liTag);
+                document.getElementById(liTag).innerHTML = "Number: " + num;
+                i += 2;
+            } while (i < 14);
+        }
+
+        function redDisplay() {
+            console.log("** Red circle hexcode function connected **");
+            for (i = 0; i < 256 ; i++) {
+                let newDiv = document.createElement("div");
+                let newP = document.createElement("p");
+                newDiv.setAttribute("id", "circle" + i);
+                newP.setAttribute("id", "hex" + i);
+                console.log(newDiv);
+                console.log(newP);
+                hexString = rgbHex(i);
+                console.log("i converted to hex: " + hexString);
+                let newContent = document.createTextNode("#" + hexString + "0000");
+                console.log(newContent);
+                let currentDiv = document.getElementById("circleOut");
+                currentDiv.appendChild(newDiv);
+                newDiv.style.width = "100px";
+                newDiv.style.height = "100px";
+                newDiv.appendChild(newP);
+                newP.appendChild(newContent);
+                newDiv.style.borderRadius = "50%";
+                newDiv.style.backgroundColor = "#" + hexString + "0000";
+                newP.style.paddingTop = "35%";
+                newP.style.paddingLeft = "10%";
+                newDiv.style.float = "left";
+            }
+        }
+
+        function greenDisplay() {
+            console.log("** Red circle hexcode function connected **");
+            for (i = 0; i < 256 ; i++) {
+                let newDiv = document.createElement("div");
+                let newP = document.createElement("p");
+                newDiv.setAttribute("id", "circle" + i);
+                newP.setAttribute("id", "hex" + i);
+                console.log(newDiv);
+                console.log(newP);
+                hexString = rgbHex(i);
+                console.log("i converted to hex: " + hexString);
+                let newContent = document.createTextNode("#00" + hexString + "00");
+                console.log(newContent);
+                let currentDiv = document.getElementById("circleOut");
+                currentDiv.appendChild(newDiv);
+                newDiv.style.width = "100px";
+                newDiv.style.height = "100px";
+                newDiv.appendChild(newP);
+                newP.appendChild(newContent);
+                newDiv.style.borderRadius = "50%";
+                newDiv.style.backgroundColor = "#00" + hexString + "00";
+                newP.style.paddingTop = "35%";
+                newP.style.paddingLeft = "10%";
+                newDiv.style.float = "left";
+            }
+        }
+
+        function blueDisplay() {
+            console.log("** Red circle hexcode function connected **");
+            for (i = 0; i < 256 ; i++) {
+                let newDiv = document.createElement("div");
+                let newP = document.createElement("p");
+                newDiv.setAttribute("id", "circle" + i);
+                newP.setAttribute("id", "hex" + i);
+                console.log(newDiv);
+                console.log(newP);
+                hexString = rgbHex(i);
+                console.log("i converted to hex: " + hexString);
+                let newContent = document.createTextNode("#0000" + hexString);
+                console.log(newContent);
+                let currentDiv = document.getElementById("circleOut");
+                currentDiv.appendChild(newDiv);
+                newDiv.style.width = "100px";
+                newDiv.style.height = "100px";
+                newDiv.appendChild(newP);
+                newP.appendChild(newContent);
+                newDiv.style.borderRadius = "50%";
+                newDiv.style.backgroundColor = "#0000" + hexString;
+                newP.style.paddingTop = "35%";
+                newP.style.paddingLeft = "10%";
+                newDiv.style.float = "left";
+            }
+        }
+
+        var rgbHex = function (rgb) {
+            var hex = Number(rgb).toString(16);
+            if (hex.length < 2) {
+                hex = "0" + hex;
+            }
+            return hex;
+        }
+
+        function clearDisplay() {
+            let elToRemove = document.getElementById("circleOut");
+            while ( elToRemove.firstChild ) elToRemove.removeChild( elToRemove.firstChild);
+        }
+
+        var adj = [];
+        var noun = [];
+        var verb = [];
+        var bird = [];
+        var room = [];
+        var nameThing = [];
+        var liquid = [];
+        var body = [];
+
+        function gathArray() {
+            console.log("** Gather function is connected **");
+
+            //adjectives 2 items
+            var arrIn0 = document.getElementById("arrIn0").value;
+            var arrIn1 = document.getElementById("arrIn1").value;
+
+            adj.push(arrIn0);
+            adj.push(arrIn1);
+            console.log("Adjectives: " + adj);
+
+            //nouns 3 items
+            var arrIn2 = document.getElementById("arrIn2").value;
+            var arrIn3 = document.getElementById("arrIn3").value;
+            var arrIn4 = document.getElementById("arrIn4").value;
+
+            noun.push(arrIn2);
+            noun.push(arrIn3);
+            noun.push(arrIn4);
+            console.log("Nouns: " + noun);
+
+            //verbs 4 items
+            var arrIn5 = document.getElementById("arrIn5").value;
+            var arrIn6 = document.getElementById("arrIn6").value;
+            var arrIn7 = document.getElementById("arrIn7").value;
+            var arrIn8 = document.getElementById("arrIn8").value;
+
+            verb.push(arrIn5);
+            verb.push(arrIn6);
+            verb.push(arrIn7);
+            verb.push(arrIn8);
+            console.log("Verbs: " + verb);
+
+            //bird
+            var arrIn9 = document.getElementById("arrIn9").value;
+
+            bird.push(arrIn9);
+            console.log("Bird: " + bird);
+
+            //room
+            var arrIn10 = document.getElementById("arrIn10").value;
+
+            room.push(arrIn10);
+            console.log("Room: " + room);
+
+            //name
+            var arrIn11 = document.getElementById("arrIn11").value;
+
+            nameThing.push(arrIn11);
+            console.log("Name: " + nameThing);
+
+            //liquid
+            var arrIn12 = document.getElementById("arrIn12").value;
+
+            liquid.push(arrIn12);
+            console.log("Liquid: " + liquid);
+
+            //body
+            var arrIn13 = document.getElementById("arrIn13").value;
+
+            body.push(arrIn13);
+            console.log("Body part: " + body);
+
+        }
+
+        function madLibOne() {
+            console.log("** Mad lib 1 function connected **");
+            document.getElementById("madOut-1").style.display = "block";
+            document.getElementById("madOut-2").style.display = "none";
+
+            document.getElementById("story-1-adj1").innerHTML = adj[0];
+            document.getElementById("story-1-adj2").innerHTML = adj[1];
+
+            document.getElementById("story-1-noun1").innerHTML = noun[0];
+            document.getElementById("story-1-noun2").innerHTML = noun[1];
+            document.getElementById("story-1-noun3").innerHTML = noun[2];
+
+            document.getElementById("story-1-verb1").innerHTML = verb[0];
+            document.getElementById("story-1-verb2").innerHTML = verb[1];
+            document.getElementById("story-1-verb3").innerHTML = verb[2];
+            document.getElementById("story-1-verb4").innerHTML = verb[3];
+
+            document.getElementById("story-1-bird").innerHTML = bird[0];
+
+            document.getElementById("story-1-room").innerHTML = room[0];
+
+            document.getElementById("story-1-name").innerHTML = nameThing[0];
+
+            document.getElementById("story-1-liquid").innerHTML = liquid[0];
+
+            document.getElementById("story-1-body").innerHTML = body[0];
+
+
+        }
+
+        function madLibTwo() {
+            console.log("** Mad lib 2 function connected **");
+            document.getElementById("madOut-1").style.display = "none";
+            document.getElementById("madOut-2").style.display = "block";
+
+            document.getElementById("story-2-adj1").innerHTML = adj[0];
+            document.getElementById("story-2-adj2").innerHTML = adj[1];
+
+            document.getElementById("story-2-noun1").innerHTML = noun[0];
+            document.getElementById("story-2-noun2").innerHTML = noun[1];
+            document.getElementById("story-2-noun3").innerHTML = noun[2];
+
+            document.getElementById("story-2-verb1").innerHTML = verb[0];
+            document.getElementById("story-2-verb2").innerHTML = verb[1];
+
+            document.getElementById("story-2-body").innerHTML = body[0];
+
+
+        }
+
+        var part3Arr = [];
+
+        function saveArr() {
+            console.log("Save array function is connected");
+            textIn = document.getElementById("inText").value;
+            console.log(textIn);
+            part3Arr = textIn.split(" ");
+            console.log(part3Arr);
+            document.getElementById("inText").value = "";
+            
+        }
+
+        function displayArr() {
+            console.log("Display Array function connected");
+            document.getElementById("arrTextOut").innerHTML = "Current Array: " + part3Arr;
+        }
+
+        function appendArr() {
+            console.log("Append array function connected");
+            let text = document.getElementById("inText").value;
+            part3Arr.push(text);
+            console.log("New Array: " + part3Arr);
+            document.getElementById("inText").value = "";
+        }
+
+        function removeArr() {
+            let testAgainst = document.getElementById("inText").value;
+            document.getElementById("inText").value = "";
+            console.log("Input to remove: " + testAgainst);
+            for (var i = 0; i < part3Arr.length; i++) {
+                testText = part3Arr[i];
+                if (testAgainst == testText) {
+                    console.log("If function is connected");
+                    var leftOverArr = part3Arr.splice(i, 1);
+                    console.log("Array item removed: " + leftOverArr);
+                    console.log("Left over array: " + part3Arr)
+                }
+            }
+        }
+
+        document.getElementById("in1Btn").addEventListener("click", numInOne);
+        document.getElementById("in2Btn").addEventListener("click", numInTwo);
+        document.getElementById("listBtn").addEventListener("click", numList);
+        document.getElementById("redBtn").addEventListener("click", redDisplay);
+        document.getElementById("greenBtn").addEventListener("click", greenDisplay);
+        document.getElementById("blueBtn").addEventListener("click", blueDisplay);
+        document.getElementById("clearBtn").addEventListener("click", clearDisplay);
+        document.getElementById("gathBtn").addEventListener("click", gathArray);
+        document.getElementById("madBtn-1").addEventListener("click", madLibOne);
+        document.getElementById("madBtn-2").addEventListener("click", madLibTwo);
+        document.getElementById("saveArr").addEventListener("click", saveArr);
+        document.getElementById("displayArr").addEventListener("click", displayArr);
+        document.getElementById("appendArr").addEventListener("click", appendArr);
+        document.getElementById("removeWord").addEventListener("click", removeArr);
+
+    </script>
+
+  </body>
+
+</html>

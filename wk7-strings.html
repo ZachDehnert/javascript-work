@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
 
-    <title>Assignment 4</title>
+    <title>Assignment #5</title>
 
     <!-- external styles -->
 
@@ -30,210 +30,354 @@
     <h2><a href="index.html">Home</a></h2>
     </div>
 
-    <h3 style="clear:both;">Participation #5 - String Methods</h3>
+    <h3 style="clear:both;">Assignment #5 - JavaScript Strings and RegEx</h3>
 
     <section class="sec-containers">
 
-        <h4>String Methods 1 Through 10</h4>
+        <h4 style="margin:0;padding:0 0 2% 0;">Part 1 | Counting Characters</h4>
 
-        <ul>
-                <li>x = Video</li>
-                <li>y = Video provides a powerful way to help you prove your point</li>
-        </ul>
+        <div>
 
-        <table id="string-table">
+            <textarea id="textArea" rows="21" cols="77" style="margin:0 2% 1% 0; float:left;"></textarea>
 
-            <tr>
-                <th class="small">Num</th>
-                <th class="medium">JS Method</th>
-                <th class="medium">Trying ..</th>
-                <th class="medium-large">Result ..</th>
-                <th class="large">Comment</th>
-            </tr>
-            <tr>
-                <td>#1</td>
-                <td>substring()</td>
-                <td>str = y.substring(0,6)</td>
-                <td id="o1"></td>
-                <td>"The substring() method extracts the characters from a string, between two specified indices, and returns the new sub string." - <a href="https://www.w3schools.com/jsref/jsref_substring.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#2</td>
-                <td>toLowerCase()</td>
-                <td>str = x.toLowerCase()</td>
-                <td id="o2"></td>
-                <td>"The toLowerCase() method converts a string to lowercase letters." - <a href="https://www.w3schools.com/jsref/jsref_tolowercase.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#3</td>
-                <td>toUpperCase()</td>
-                <td>str = x.toUpperCase()</td>
-                <td id="o3"></td>
-                <td>"The toUpperCase() method converts a string to uppercase letters." - <a href="https://www.w3schools.com/jsref/jsref_touppercase.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#4</td>
-                <td>toString()</td>
-                <td>str = x.toString()</td>
-                <td id="o4"></td>
-                <td>"The toString() method returns the value of a String object." - <a href="https://www.w3schools.com/jsref/jsref_tostring_string.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#5</td>
-                <td>.length</td>
-                <td>str = x.length</td>
-                <td id="o5"></td>
-                <td>"The length property returns the length of a string (number of characters)." - <a href="https://www.w3schools.com/jsref/jsref_length_string.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#6</td>
-                <td>charAt()</td>
-                <td>str = x.charAt(0)</td>
-                <td id="o6"></td>
-                <td>"The charAt() method returns the character at the specified index in a string." - <a href="https://www.w3schools.com/jsref/jsref_charat.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#7</td>
-                <td>concat()</td>
-                <td>str = x.concat(y)</td>
-                <td id="o7"></td>
-                <td>"The concat() method is used to join two or more strings." - <a href="https://www.w3schools.com/jsref/jsref_concat_string.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#8</td>
-                <td>includes()</td>
-                <td>str = y.includes("prove")</td>
-                <td id="o8"></td>
-                <td>"The includes() method determines whether a string contains the characters of a specified string." - <a href="https://www.w3schools.com/jsref/jsref_includes.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#9</td>
-                <td>split(" ")</td>
-                <td>str = y.split(" ")</td>
-                <td id="o9"></td>
-                <td>"The split() method is used to split a string into an array of substrings, and returns the new array." - <a href="https://www.w3schools.com/jsref/jsref_split.asp" target="_blank">w3schools.com</a></td>
-            </tr>
-            <tr>
-                <td>#10</td>
-                <td>slice()</td>
-                <td>str = y.slice(0, 8)</td>
-                <td id="o10"></td>
-                <td>"The slice() method extracts parts of a string and returns the extracted parts in a new string." - <a href="https://www.w3schools.com/jsref/jsref_slice_string.asp" target="_blank">w3schools.com</a></td>
-            </tr>
+            <textarea id="textOut" rows="21" cols="77" style="margin:0 2% 1% 0; float:left;"></textarea>
 
+        </div>
 
-        </table>
+        <div style="clear:both;">
 
-        <script>
-            console.log("******* Internal JS is connected *******");
-        
-            let x = "Video";
-            let y = "Video provides a powerful way to help you prove your point";
+            <p style="float:left;">Characters Left: </p>
 
-            // Method #1
-            console.log("Method #1: " + y.substring(0,6));
-            let a = y.substring(0,6);
-            document.getElementById("o1").innerHTML = a;
+            <p id="pCharCount">255</p>
 
-            // Method #2
-            console.log("Method #2: " + x.toLowerCase());
-            let b = x.toLowerCase();
-            document.getElementById("o2").innerHTML = b;
+        </div>
 
-            // Method #3
-            console.log("Method #3: " + x.toUpperCase());
-            let c = x.toUpperCase();
-            document.getElementById("o3").innerHTML = c;
+        <input id="submitBtn" type="button" value="Submit">
 
-            // Method #4
-            console.log("Method #4: " + x.toString());
-            let d = x.toString();
-            document.getElementById("o4").innerHTML = d;
+    </section>
 
-            // Method #5
-            console.log("Method #5: " + x.length);
-            let f = x.length;
-            document.getElementById("o5").innerHTML = f;
+    <section class="sec-containers">
 
-            // Method #6
-            console.log("Method #6: " + x.charAt(0));
-            let g = x.charAt(0);
-            document.getElementById("o6").innerHTML = g;
+        <h4 style="margin:0;padding:0 0 2% 0;">Part 2 | Close Enough</h4>
 
-            // Method #7
-            console.log("Method #7: " + x.concat(y));
-            let h = x.concat(y);
-            document.getElementById("o7").innerHTML = h;
-
-            // Method #8
-            console.log("Method #8: " + y.includes("prove"));
-            let i = y.includes("prove");
-            document.getElementById("o8").innerHTML = i;
-
-            // Method #9
-            console.log("Method #9: " + y.split(" "));
-            let j = y.split(" ");
-            document.getElementById("o9").innerHTML = j;
-
-            // Method #10
-            console.log("Method #10: " + y.slice(17,25));
-            let k = y.slice(17,25);
-            document.getElementById("o10").innerHTML = k;
+        <p>What was that movie about Dodgeball? Answer: Dodgeball True Underdog Story</p>
+        <input style="width:30%;" id="guessText" type="text"><br>
+        <div style="margin:1% 0 0 0;">
+            <p style="float:left;">Points: </p>
+            <p id="outputPoints">0</p>
+        </div>
+        <input id="submitBtn-2" type="button" value="Submit">
 
 
 
-        </script>
+    </section>
 
-        <h4>Find and Replace</h4>
+    <section class="sec-containers">
 
-        <p>Find</p>
-        <input type="text" id="find">
-        <p>Replace</p>
-        <input type="text" id="replace"><br>
-        <input type="button" value="Replace" id="button">
+        <h4 style="margin:0;padding:0 0 2% 0;">Part 3 | Profanity Filter</h4>
 
-        <p id="findP">Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries. Themes and styles also help keep your document coordinated.</p>
+        <textarea id="textAreaProf" rows="21" cols="77" style="margin:0 2% 1% 0;">The seven dirty words are seven English-language words that American comedian George Carlin first listed in 1972 in his monologue "Seven Words You Can Never Say on Television". The words are: shit, piss, fuck, cunt, cocksucker, motherfucker, and tits.
 
-        <script>
-
-        console.log("******* Part 2 - Find and Replace *******")
-        
-
-        function findAndReplace() {
-            let find = document.getElementById("find").value;
-            console.log("Words to find: " + find);
-            let replace = document.getElementById("replace").value;
-            console.log("Words to replace: " + replace);
-            let para = document.getElementById("findP");
-            console.log(para);
-            let pattern = new RegExp(find, 'i');
-
-            if (find == ""){
-                document.getElementById("button").value = "Enter something into Find"
-                document.getElementById("find").focus();
-            } else if (replace == "") {
-                document.getElementById("button").value = "Enter something into Replace"
-                document.getElementById("replace").focus();
-            } else {
-                while(para.textContent.indexOf(find) >= 0) {
-                    para.textContent = para.textContent.replace(pattern, replace);
-                } //End of while loop
-            }
-
-
-
+        The words are: Shit, Piss, Fuck, Cunt, Cocksucker, Motherfucker, and Tits.
             
-        } // End of function
+        The words are: SHIT, PISS, FUCK, CUNT, COCKSUCKER, MOTHERFUCKER, and TITS.
+            
+        The words are: Mr.Shit, Mr.Piss, Mr.Fuck, Mr.Cunt, Mr.Cocksucker, Mr.Motherfucker, and Mr.Tits.
+            </textarea>
+        <br>
+        <input type="button" id="submitBtnProf" value="Submit">
 
-        document.getElementById("button").addEventListener("click", findAndReplace);
+    </section>
 
-        </script>
+    <section class="sec-containers">
+
+        <h4 style="margin:0;padding:0 0 2% 0;">Part 4 | Hex Overkill</h4>
+
+        <input type="text" id="inputHex" placeholder="">
+
+        <input type="button" id="submitBtnHex" value="Submit">
+        <p>Entered Hexcode: </p>
+        <p id="hexOutput"></p>
+
 
     </section>
 
     <script>
-        
+    console.log("******* Internal JS is Connected *******");
+    console.log("Part 2 Answer: DodgeBall True Underdog Story");
 
+//***********************************************************
+// Script for Part 1
+//***********************************************************
+
+    function charCount() {
+        //console.log("charCount function is working");
+        let textEntered = document.getElementById('textArea').value;
+        let charCount = textEntered.length;
+        //console.log(textEntered);
+        //console.log(charCount);
+        charCountCrunched = 255 - charCount;
+        //console.log(charCountCrunched);
+        document.getElementById("pCharCount").innerHTML = charCountCrunched;
+        if (charCountCrunched < 0) {
+            //console.log("if statement is connected");
+            document.getElementById("textArea").style.border = "2px solid #FF0000";
+            document.getElementById("pCharCount").style.color = "#FF0000";
+            document.getElementById("pCharCount").style.fontWeight = "bold";
+        } else if (charCountCrunched >= 0) {
+            //console.log("if statement 2 is connected");
+            document.getElementById("textArea").style.border = "2px solid #222";
+            document.getElementById("pCharCount").style.color = "#000";
+            document.getElementById("pCharCount").style.fontWeight = "normal";
+        }
+    }
+
+    function outputText() {
+        //console.log("Button is connected");
+        let textEntered = document.getElementById('textArea').value;
+        let charCount = textEntered.length;
+        let charCountCrunched = 255 - charCount;
+        document.getElementById("textOut").textContent = textEntered;
+        if (charCountCrunched < 0) {
+            //console.log("text move is connected");
+            let cutOffText = textEntered.substring(0, 255);
+            document.getElementById("textOut").textContent = cutOffText;
+        }
+    }
+
+    document.getElementById("textArea").addEventListener("input", charCount)
+    document.getElementById("submitBtn").addEventListener("click", outputText);
+
+//***********************************************************
+// End of Part 1
+//***********************************************************
+
+//***********************************************************
+// Script Part 2
+//***********************************************************
+
+    function questionCheck() {
+        //console.log("Question function connected");
+        var guess = document.getElementById("guessText").value;
+        //console.log(guess);
+        //var regGuess = new RegExp(guess);
+        //var regGuess = new String(guess);
+        var splitGuess = guess.split(" ");
+        //console.log(splitGuess);
+        //console.log(splitGuess.length);
+
+        var sumCrunch = 0;
+        var points = 0;
+        var guessCheck = "Dodgeball True Underdog Story";
+        var count = 0;
+
+        for (i = 0; i < splitGuess.length; i++) {
+            
+            var crunch = guessCheck.indexOf(splitGuess[i]);
+            console.log(crunch);
+
+            if (crunch == 0) {
+                count += 1;
+            } else if (crunch == 10) {
+                count += 1;
+            } else if (crunch == 15) {
+                count += 1;
+            } else if (crunch == 24) {
+                count += 1;
+            }
+
+            if (count == 4) {
+                document.getElementById("outputPoints").innerHTML = "1";
+            }
+
+        }
+
+        console.log(splitGuess);
+        var splitAnswer = guessCheck.split(" ");
+        console.log(splitAnswer)
+        var newCount = 0;
+
+        for (i = 0; i < splitAnswer.length; i++) {
+
+            if (splitGuess[i] == splitAnswer[i]) {
+                newCount += 1;
+            }
+
+        }
+
+        console.log(newCount);
+
+        if (newCount == 4) {
+            document.getElementById("outputPoints").innerHTML = "2";
+        }
+
+
+    }
+
+    document.getElementById("submitBtn-2").addEventListener("click", questionCheck)
+
+//***********************************************************
+// End of Part 2
+//***********************************************************
+
+//***********************************************************
+// Script Part 3
+//***********************************************************
+
+    var badWords = ["Shit","Piss","Fuck","Cunt","Cocksucker","Motherfucker","Tits"]
+
+    var para = document.getElementById("textAreaProf");
+    //console.log(para);
+
+
+    function profFilter() {
+        //console.log("Profanity Filter connected");
+
+        for (i = 0; i < badWords.length; i++) {
+            let find = badWords[i];
+            let pattern = new RegExp(find, 'i');
+            console.log(find);
+            console.log(para.value);
+            while(para.value.indexOf(find) >= 0) {
+                    para.value = para.value.replace(pattern, "#!@%$#");
+            } //End of while loop
+
+        }
+
+    }
+
+    document.getElementById("submitBtnProf").addEventListener("click", profFilter)
+
+//***********************************************************
+// End of Part 3
+//***********************************************************
+
+//***********************************************************
+// Script Part 4
+//***********************************************************
+
+    function hexCheck() {
+        //console.log("Hex Check Function connected");
+
+        //document.getElementById("submitBtnHex").value = "Submit";
+
+        var inputHex = document.getElementById("inputHex").value;
+
+        var pass = "true";
+
+        console.log("Inputted Text: " + inputHex);
+
+        checkForBlank(inputHex);
+
+        if (pass == "false") {
+            return;
+
+        }
+
+        checkLength(inputHex);
+
+        checkHash(inputHex);
+
+        checkChars(inputHex);
+
+        if (pass == "false") {
+            return;
+
+        }
+
+        changeBackground(inputHex);
+
+        inputHex = inputHex.toUpperCase();
+
+        document.getElementById("hexOutput").innerHTML = inputHex;
+
+
+
+        function checkForBlank(inputHex) {
+
+            if (inputHex == "") {
+                document.getElementById("submitBtnHex").value = "Please Enter a Hex Code";
+                document.getElementById("inputHex").focus();
+                document.getElementById("inputHex").value = "#222000";
+                pass = "false";
+            }
+
+
+        }
+
+        function checkLength() {
+
+            if (inputHex.length == 4) {
+                document.getElementById("submitBtnHex").value = "You entered a 3-character hexcode";
+            } else {
+                document.getElementById("submitBtnHex").value = "You entered a 6-character hexcode";
+            }
+
+        }
+
+        function checkHash() {
+
+            firstChar = inputHex.charAt(0);
+            console.log("First Character: " + firstChar);
+
+            if (firstChar != "#") {
+                document.getElementById("submitBtnHex").value = "Hexcodes normally have a '#' in front";
+                inputHex = "#" + inputHex;
+
+            }
+        }
+
+        //console.log("Second Input Check: " + inputHex);
+
+        function checkChars(inputHex) {
+
+            newInput = inputHex.split("");
+            //console.log("New Array from Input: " + newInput);
+
+            for (i = 1; i < newInput.length; i++) {
+                //console.log("Step " + i + " check");
+
+                if (newInput[i].match(/[a-f]/i) || newInput[i].match(/[0-9]/)) {
+                    console.log("letter character check good");
+
+                } else {
+                    pass = "false"
+                    document.getElementById("submitBtnHex").value = "Must be between 0-9 and A-F";
+                }
+
+            }
+
+            for (i = 1; i < newInput.length; i++) {
+                console.log("Step " + i + " check");
+
+                if (newInput[i].match(/[o]/i)) {
+                    console.log("They used an 'O'");
+                    newInput[i] = 0;
+                    document.getElementById("submitBtnHex").value = "'O's were changed to zeros, press again";
+                } 
+
+            }
+
+            console.log(newInput);
+            inputHex = newInput.toString();
+            console.log(inputHex);
+            inputHex = inputHex.replace(/,/g, '');
+            console.log(inputHex);
+            document.getElementById("inputHex").value = inputHex;
+
+
+        }
+
+        function changeBackground(inputHex) {
+            //console.log("Change Background Function is connected");
+            //document.getElementById("submitBtnHex").value = "Submit"
+            document.body.style.backgroundColor = inputHex;
+        }
+
+
+    }
+
+    document.getElementById("submitBtnHex").addEventListener("click", hexCheck)
 
     </script>
 

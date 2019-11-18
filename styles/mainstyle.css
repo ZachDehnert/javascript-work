@@ -106,7 +106,7 @@ input[type=text], input[type=password] {
     font-size: 1.3em;
     border: 1px solid #222;
     box-shadow: 2px 2px 2px #222;
-    min-width: 140px;
+    width: 140px;
     min-height: 40px;
 }
 
@@ -606,4 +606,51 @@ input[type=text], input[type=password] {
     padding:1%;
     background-color: #fff;
     color:#222;
+}
+
+#textArea {
+    border: 2px solid #222;
+}
+
+#textOut {
+    border: 2px solid #222;
+}
+
+#numInput {
+    width: 70px;
+
+}
+
+
+.sec-containers-mad-lib {
+    border:1px solid #222;
+    margin:2%;
+    padding:2%;
+    overflow: hidden;
+}
+
+.sec-containers-mad-lib p {
+    float:left;
+    margin:0 0 0 1%;
+}
+
+#madOut-1 {
+    display:none;
+}
+
+#madOut-2 {
+    display:none;
+}
+
+.sec-containers-mad-lib span {
+    font-weight:bold;
+}
+
+#inText {
+    width:100%;
+}
+
+#arrTextOut {
+    font-weight:bold;
+    margin-bottom:2%;
 }
